@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autonomous Source Distillation"
+  short_description: "Distill long material with traceable coverage"
+  default_prompt: "Use $autonomous-source-distillation to turn this long or noisy source bundle into source-linked chunk notes, auditable claims, coverage checks, and a synthesis."
