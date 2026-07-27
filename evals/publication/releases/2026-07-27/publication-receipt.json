@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "factory_export_parity": "pass",
+    "installed_runtime_forbidden_paths": "pass",
+    "installed_runtime_parity": "pass",
+    "mutation_cases": {
+      "passed": 25,
+      "status": "pass",
+      "total": 25
+    },
+    "package_tests": {
+      "passed": 92,
+      "status": "pass",
+      "total": 92
+    },
+    "promotion_retest": {
+      "new_release_blockers": 0,
+      "original_blockers_closed": 3,
+      "status": "pass"
+    },
+    "random_checkout": {
+      "checkout_label": "<random-checkout>",
+      "head_commit": "2a071ddbbef7dce880eb58303989332aa50d3307",
+      "status": "pass"
+    },
+    "resource_cases": {
+      "passed": 3,
+      "status": "pass",
+      "total": 3
+    },
+    "runtime": {
+      "allowed_file_count": 21,
+      "sha256": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed",
+      "status": "pass"
+    },
+    "starter_bundle": {
+      "readiness_status": "pass",
+      "structure_status": "pass"
+    },
+    "stock_skill_creator_validator": "pass",
+    "strict_release_replay": {
+      "behavioral_case_count": 11,
+      "status": "pass",
+      "total_replayed_case_count": 12
+    }
+  },
+  "proof_boundary": "This receipt records verification of the named code commit and synchronized local destinations. It is stored in a metadata-only descendant commit and does not claim that its own future commit hash was preverified.",
+  "published_branch": "main",
+  "published_remote": "git@github.com:oniivan/autonomous-source-distillation.git",
+  "schema_version": 1,
+  "status": "pass",
+  "verified_code_commit": "2a071ddbbef7dce880eb58303989332aa50d3307",
+  "verified_on": "2026-07-27"
+}
