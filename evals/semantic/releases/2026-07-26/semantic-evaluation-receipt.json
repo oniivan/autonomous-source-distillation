@@ -1,0 +1,228 @@
+{
+  "cases": {
+    "C-boundary-overlap": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 2,
+          "chunks": 2,
+          "claims": 1,
+          "evidence": 2,
+          "sources": 1
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "errors": [],
+      "output_tree_sha256": "b216dc8a93ce06918d1553b701f05a3a4facc84a83ba8f7cce8d954344f34b9b",
+      "semantic_result": {
+        "answer": "Launch remains blocked until the backup restore drill passes.",
+        "canonical_evidence_ids": [
+          "E1"
+        ],
+        "case_id": "C-boundary-overlap",
+        "claim_ids": [
+          "C1"
+        ],
+        "probe_id": "launch-gate",
+        "schema_version": 1,
+        "support_observation_count": 1
+      },
+      "status": "pass"
+    },
+    "D-source-composition-order-a": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 4,
+          "chunks": 4,
+          "claims": 8,
+          "evidence": 10,
+          "sources": 4
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "errors": [],
+      "output_tree_sha256": "63de1f0bc0270c619cc6434379384a75f4cd7502bf225bf8675418b45c72cab8",
+      "semantic_result": {
+        "answer": "No. S1 and independent S3 support October readiness only for North America and provide no Europe assessment or evidence; S4 blocks a global rollout until the EU audit closes. S2 is derived entirely from S1 and is excluded from independent corroboration.",
+        "blocking_source_ids": [
+          "S4"
+        ],
+        "case_id": "D-source-composition-order-a",
+        "confidence": "high",
+        "excluded_as_derived_source_ids": [
+          "S2"
+        ],
+        "global_rollout_supported": false,
+        "probe_id": "global-october-rollout",
+        "region_limited_source_ids": [
+          "S1",
+          "S3"
+        ],
+        "schema_version": 1
+      },
+      "status": "pass"
+    },
+    "D-source-composition-order-b": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 4,
+          "chunks": 4,
+          "claims": 8,
+          "evidence": 10,
+          "sources": 4
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "errors": [],
+      "output_tree_sha256": "12a24dc3e36a4e691379172b2f682f7a8a181edbfff73469f373f92786c0f174",
+      "semantic_result": {
+        "answer": "No. S4 blocks a global October rollout until the EU audit closes; S1 and S3 support only North American regions and do not establish European readiness; S2 is entirely derived from S1 and is not independent global support.",
+        "blocking_source_ids": [
+          "S4"
+        ],
+        "case_id": "D-source-composition-order-b",
+        "confidence": "high",
+        "excluded_as_derived_source_ids": [
+          "S2"
+        ],
+        "global_rollout_supported": false,
+        "probe_id": "global-october-rollout",
+        "region_limited_source_ids": [
+          "S3",
+          "S1"
+        ],
+        "schema_version": 1
+      },
+      "status": "pass"
+    },
+    "G-incremental-correction": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 2,
+          "chunks": 2,
+          "claims": 2,
+          "evidence": 3,
+          "sources": 2
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "errors": [],
+      "output_tree_sha256": "35157827e06721fdf211aafe6f114f3690b422219dcd19bbed7b139779511957",
+      "semantic_result": {
+        "answer": "The current filing deadline is October 15, 2026. The earlier September 30, 2026 deadline was explicitly replaced by the correction in S1-R2 and is superseded.",
+        "case_id": "G-incremental-correction",
+        "current_deadline": "October 15, 2026",
+        "new_claim_id": "C-DEADLINE-OCT15",
+        "old_claim_id": "C-DEADLINE-SEP30",
+        "previous_deadline": "September 30, 2026",
+        "probe_id": "current-deadline",
+        "schema_version": 1
+      },
+      "status": "pass"
+    },
+    "I-cold-reconstruction": {
+      "errors": [],
+      "output_tree_sha256": "f8ea99717c8e125ddbc59ce8da8ac2d2758edc8eabd09a25ca9f0a423403f88f",
+      "semantic_result": {
+        "case_id": "I-cold-reconstruction",
+        "probe_id": "cold-reconstruction",
+        "release_blocker": "Release remains blocked until the accessibility audit closes.",
+        "reload_paths": [
+          "claims.jsonl",
+          "evidence.jsonl",
+          "sources.jsonl"
+        ],
+        "schema_version": 1,
+        "scope_caveat": "The available evidence sample excluded mobile users, so its scope is limited.",
+        "unresolved_gaps": [
+          "The accessibility audit completion date is unknown."
+        ],
+        "verification_status": "Both claims are source-only meeting statements with no external verification recorded; the raw source is intentionally unavailable in the cold-reader packet."
+      },
+      "status": "pass"
+    }
+  },
+  "evaluated_at": "2026-07-27T03:11:33.474033+00:00",
+  "oracle_sha256": "fc93592f0b3e834bb6a6fee146a44054c017fa4196aad3b809a5b45a2dac5186",
+  "proof_boundary": "Fresh-agent semantic evidence for cases C, D, G, and I only; not a general factuality guarantee.",
+  "run_metadata": {
+    "cases": [
+      {
+        "case_dir": "<external-run-root>/cases/C-boundary-overlap",
+        "case_id": "C-boundary-overlap",
+        "output_dir": "<external-run-root>/cases/C-boundary-overlap/output",
+        "task": "<external-run-root>/cases/C-boundary-overlap/task.md"
+      },
+      {
+        "case_dir": "<external-run-root>/cases/D-source-composition-order-a",
+        "case_id": "D-source-composition-order-a",
+        "output_dir": "<external-run-root>/cases/D-source-composition-order-a/output",
+        "task": "<external-run-root>/cases/D-source-composition-order-a/task.md"
+      },
+      {
+        "case_dir": "<external-run-root>/cases/D-source-composition-order-b",
+        "case_id": "D-source-composition-order-b",
+        "output_dir": "<external-run-root>/cases/D-source-composition-order-b/output",
+        "task": "<external-run-root>/cases/D-source-composition-order-b/task.md"
+      },
+      {
+        "case_dir": "<external-run-root>/cases/G-incremental-correction",
+        "case_id": "G-incremental-correction",
+        "output_dir": "<external-run-root>/cases/G-incremental-correction/output",
+        "task": "<external-run-root>/cases/G-incremental-correction/task.md"
+      },
+      {
+        "case_dir": "<external-run-root>/cases/I-cold-reconstruction",
+        "case_id": "I-cold-reconstruction",
+        "output_dir": "<external-run-root>/cases/I-cold-reconstruction/output",
+        "task": "<external-run-root>/cases/I-cold-reconstruction/task.md"
+      }
+    ],
+    "fixture_hashes": {
+      "C-boundary-overlap": "2cdd8bff75df548824f1c1212251774e82b2392747a6d4ae0cd078a3277252c3",
+      "D-source-composition-order-a": "af3e0498b5746371a462268aba4423d6183907ec0ae610edc05a427cf43826b1",
+      "D-source-composition-order-b": "6367ca63ab5b0a9ebda0885142ca258f0c42fc1166036d0b41b2846a79f5395f",
+      "G-incremental-correction": "0ecd9d7660581f09ec2706431f8a75b58bfa01e3544ee180842ccde9ce5ecfba",
+      "I-cold-reconstruction": "239aff1a849f3be3bdc44a6b12c025a6b891a701998da8c378a99d27f7fb0e4b"
+    },
+    "oracle_copied_to_run": false,
+    "prepared_at": "2026-07-27T02:55:10.603092+00:00",
+    "schema_version": 1,
+    "skill_root": "$CODEX_HOME/skills/autonomous-source-distillation",
+    "skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07"
+  },
+  "runtime_binding": {
+    "expected_skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07",
+    "observed_skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07",
+    "status": "pass"
+  },
+  "schema_version": 1,
+  "source_order_invariance": {
+    "different_fields": [],
+    "status": "pass"
+  },
+  "status": "pass"
+}

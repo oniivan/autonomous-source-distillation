@@ -1,0 +1,43 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Determine the current filing deadline and explain the disposition of the deadline stated in the earlier revision.",
+  "output_mode": "timeline",
+  "required_facets": [
+    "current-deadline",
+    "previous-deadline",
+    "supersession"
+  ],
+  "required_risks": [
+    "revision-correction",
+    "representation",
+    "boundary"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The bundle identifies October 15, 2026 as current, preserves September 30, 2026 as the earlier superseded deadline, links the old and new claims reciprocally, covers both revisions, and passes the required audit.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1",
+      "S1-R2"
+    ],
+    "key_claim_ids": [
+      "C-DEADLINE-SEP30",
+      "C-DEADLINE-OCT15"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "evidence.jsonl",
+      "claims.jsonl",
+      "synthesis.md",
+      "semantic-result.json"
+    ],
+    "unresolved_gaps": [],
+    "safe_to_drop": [
+      "inputs/policy-r1.txt",
+      "inputs/policy-r2.txt"
+    ]
+  }
+}

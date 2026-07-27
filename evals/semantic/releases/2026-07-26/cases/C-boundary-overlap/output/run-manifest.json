@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Answer what exact condition gates launch while preserving the boundary-crossing proposition exactly once and preventing loaded overlap from increasing support.",
+  "output_mode": "direct-answer",
+  "required_facets": [
+    "launch-gate"
+  ],
+  "required_risks": [
+    "boundary",
+    "overlap",
+    "representation"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The exact launch condition resolves to one active claim and one canonical supporting evidence observation at S1-R1 lines 2-3; overlap contributes no additional support.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1"
+    ],
+    "key_claim_ids": [
+      "C1"
+    ],
+    "reload_paths": [
+      "claims.jsonl",
+      "evidence.jsonl",
+      "coverage.json",
+      "semantic-result.json",
+      "handoff.md"
+    ],
+    "unresolved_gaps": [
+      "The fixture statement is source-only and was not externally verified."
+    ],
+    "safe_to_drop": [
+      "inputs/source.txt",
+      "chunks.jsonl",
+      "chunk-notes.jsonl"
+    ]
+  }
+}

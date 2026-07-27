@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "case_id": "transcript-15m",
+      "elapsed_seconds": 0.051,
+      "errors": [],
+      "input_bytes": 16812,
+      "line_count": 188,
+      "max_elapsed_seconds": 10.0,
+      "max_rss_mb": 128.0,
+      "output_bytes": 20551,
+      "output_chunks": 3,
+      "peak_rss_mb": 25.406,
+      "peak_rss_status": "measured",
+      "status": "pass",
+      "warnings": [],
+      "word_count": 2256
+    },
+    {
+      "case_id": "transcript-60m",
+      "elapsed_seconds": 0.054,
+      "errors": [],
+      "input_bytes": 67392,
+      "line_count": 750,
+      "max_elapsed_seconds": 15.0,
+      "max_rss_mb": 192.0,
+      "output_bytes": 82903,
+      "output_chunks": 11,
+      "peak_rss_mb": 26.016,
+      "peak_rss_status": "measured",
+      "status": "pass",
+      "warnings": [],
+      "word_count": 9000
+    },
+    {
+      "case_id": "large-corpus-24mb",
+      "elapsed_seconds": 2.298,
+      "errors": [],
+      "input_bytes": 25165830,
+      "line_count": 271795,
+      "max_elapsed_seconds": 90.0,
+      "max_rss_mb": 300.0,
+      "output_bytes": 31197298,
+      "output_chunks": 3997,
+      "peak_rss_mb": 193.656,
+      "peak_rss_status": "measured",
+      "status": "pass",
+      "warnings": [],
+      "word_count": 3261540
+    }
+  ],
+  "historical_pre_refactor_peak_rss_mb": {
+    "input_range_mb": "20-26",
+    "observed_range_mb": "553-666",
+    "source": "2026-07-26 authoritative review reproduction"
+  },
+  "measured_at": "2026-07-27T03:13:52.160115+00:00",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "proof_boundary": "Local synthetic chunker resource measurements; not a guarantee for every filesystem, Python build, or source structure.",
+  "python": "3.14.6",
+  "schema_version": 1,
+  "status": "pass",
+  "words_per_minute_assumption": 150
+}

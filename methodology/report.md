@@ -1,19 +1,21 @@
 # Autonomous Source Distillation Methodology Upgrade
 
-Status: decision-ready research, installed amendment, and deterministic validation
-complete
+Status: research, installed amendment, corrective validation, and behavioral release
+evidence complete
 
-AS_OF: 2026-07-18
+Research AS_OF: 2026-07-18
+
+Implementation verified: 2026-07-27
 
 Confidence: high for the stable methodology; medium for optional emerging chunkers and
 automatic long-summary metrics.
 
 ## Executive Summary
 
-The current skill has the right sequence: source registration, chunking, extraction,
-claim promotion, synthesis, and handoff. Its main weakness is that it can produce a
-complete-looking result without proving semantic coverage or controlling what was lost
-at each compression layer.
+The pre-amendment skill had the right sequence: source registration, chunking,
+extraction, claim promotion, synthesis, and handoff. Its main weakness was that it could
+produce a complete-looking result without proving semantic coverage or controlling what
+was lost at each compression layer.
 
 The amendment should preserve the existing ownership boundary while adding seven
 controls:
@@ -238,11 +240,12 @@ paraphrased probes, contradiction/minority cases, and source-order perturbation.
 - Added `references/evaluation.md` for deterministic and fresh-agent gates.
 - Enhanced `scripts/chunk_text.py` so overlap and unique content have separate metadata,
   hashes, and line/locator ranges.
-- Added `scripts/audit_bundle.py` and 27 focused installed-path tests for serious JSONL
-  bundles and both public CLIs.
+- Added a schema-v3 structural/readiness auditor, streaming chunker, starter bundle,
+  mutation/resource gates, sealed C/D/G/I semantic fixtures, and a direct/light/serious
+  proportionality comparison.
 
-The full deterministic gate and remaining semantic boundary are recorded in
-`implementation-receipt.md`.
+The full deterministic and behavioral proof boundaries are recorded in
+`implementation-receipt.md` and the release receipts under `evals/`.
 
 ## Judge Gate
 

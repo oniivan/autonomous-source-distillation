@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "route": "light",
+  "source": {
+    "source_id": "source-1",
+    "source_ref": "inputs/source.txt",
+    "sha256": "7f418bd39bcf04fb936cceb2ce8ffaab698d35736967f2f385826ba9cbe2f0f8",
+    "line_count": 900,
+    "locator_scheme": "inputs/source.txt:<line> (<timestamp>)",
+    "representation": "plain-text timestamped transcript",
+    "representation_limits": [
+      "No speaker labels are present; attribution is limited to roles named in the text."
+    ]
+  },
+  "segments": [
+    {
+      "chunk_id": "C1",
+      "line_start": 1,
+      "line_end": 150,
+      "time_start": "00:04",
+      "time_end": "10:00",
+      "status": "distilled",
+      "material_locators": [
+        "inputs/source.txt:47 (03:08)"
+      ]
+    },
+    {
+      "chunk_id": "C2",
+      "line_start": 151,
+      "line_end": 300,
+      "time_start": "10:04",
+      "time_end": "20:00",
+      "status": "distilled",
+      "material_locators": [
+        "inputs/source.txt:232 (15:28)"
+      ]
+    },
+    {
+      "chunk_id": "C3",
+      "line_start": 301,
+      "line_end": 450,
+      "time_start": "20:04",
+      "time_end": "30:00",
+      "status": "distilled",
+      "material_locators": []
+    },
+    {
+      "chunk_id": "C4",
+      "line_start": 451,
+      "line_end": 600,
+      "time_start": "30:04",
+      "time_end": "40:00",
+      "status": "distilled",
+      "material_locators": [
+        "inputs/source.txt:451 (30:04)"
+      ]
+    },
+    {
+      "chunk_id": "C5",
+      "line_start": 601,
+      "line_end": 750,
+      "time_start": "40:04",
+      "time_end": "50:00",
+      "status": "distilled",
+      "material_locators": [
+        "inputs/source.txt:683 (45:32)"
+      ]
+    },
+    {
+      "chunk_id": "C6",
+      "line_start": 751,
+      "line_end": 900,
+      "time_start": "50:04",
+      "time_end": "60:00",
+      "status": "distilled",
+      "material_locators": [
+        "inputs/source.txt:877 (58:28)"
+      ]
+    }
+  ],
+  "required_facets": {
+    "budget_cap": {
+      "status": "covered",
+      "locator": "inputs/source.txt:47 (03:08)"
+    },
+    "launch_date": {
+      "status": "covered",
+      "locator": "inputs/source.txt:232 (15:28)"
+    },
+    "release_blocker": {
+      "status": "covered",
+      "locator": "inputs/source.txt:451 (30:04)"
+    },
+    "minority_dissent": {
+      "status": "covered",
+      "locator": "inputs/source.txt:683 (45:32)"
+    },
+    "scope_limitation": {
+      "status": "covered",
+      "locator": "inputs/source.txt:877 (58:28)"
+    }
+  },
+  "coverage_gate": {
+    "all_source_lines_accounted_for": true,
+    "all_required_facets_covered": true,
+    "contradictions_checked": true,
+    "minority_evidence_checked": true,
+    "unresolved_gaps": []
+  }
+}

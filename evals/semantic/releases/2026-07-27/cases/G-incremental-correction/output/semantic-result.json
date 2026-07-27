@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "case_id": "G-incremental-correction",
+  "probe_id": "current-deadline",
+  "answer": "The current filing deadline is October 15, 2026. The earlier September 30, 2026 deadline was corrected and replaced by the later revision.",
+  "current_deadline": "October 15, 2026",
+  "previous_deadline": "September 30, 2026",
+  "old_claim_id": "C1",
+  "new_claim_id": "C2"
+}

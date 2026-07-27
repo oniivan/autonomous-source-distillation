@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "case_id": "D-source-composition-order-b",
+  "probe_id": "global-october-rollout",
+  "answer": "No. The evidence supports October readiness only for the United States and Canada or North America, provides no European readiness evidence, and says a global rollout should not proceed until the EU audit closes. S2's broader readiness wording is derived entirely from S1 and is not independent support.",
+  "global_rollout_supported": false,
+  "region_limited_source_ids": [
+    "S3",
+    "S1"
+  ],
+  "blocking_source_ids": [
+    "S4"
+  ],
+  "excluded_as_derived_source_ids": [
+    "S2"
+  ],
+  "confidence": "high"
+}

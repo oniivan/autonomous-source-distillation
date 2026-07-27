@@ -1,0 +1,42 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Recover the pilot result and its principal limitation with exact transcript locators.",
+  "output_mode": "executive-summary",
+  "required_facets": [
+    "result",
+    "limitations"
+  ],
+  "required_risks": [
+    "boundary",
+    "representation"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The duration, reported result, and generalization limit each resolve to exact evidence.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1"
+    ],
+    "key_claim_ids": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "handoff.md"
+    ],
+    "unresolved_gaps": [
+      "The transcript claims have not been externally verified."
+    ],
+    "safe_to_drop": [
+      "inputs/source.txt",
+      "chunks.jsonl"
+    ]
+  }
+}

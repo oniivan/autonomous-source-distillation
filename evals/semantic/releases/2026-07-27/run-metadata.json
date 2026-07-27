@@ -1,0 +1,169 @@
+{
+  "case_input_hashes": {
+    "C-boundary-overlap": "2cdd8bff75df548824f1c1212251774e82b2392747a6d4ae0cd078a3277252c3",
+    "D-source-composition-order-a": "af3e0498b5746371a462268aba4423d6183907ec0ae610edc05a427cf43826b1",
+    "D-source-composition-order-b": "6367ca63ab5b0a9ebda0885142ca258f0c42fc1166036d0b41b2846a79f5395f",
+    "G-incremental-correction": "0ecd9d7660581f09ec2706431f8a75b58bfa01e3544ee180842ccde9ce5ecfba",
+    "I-cold-reconstruction": "239aff1a849f3be3bdc44a6b12c025a6b891a701998da8c378a99d27f7fb0e4b"
+  },
+  "cases": [
+    {
+      "case_dir": "<external-semantic-run-root>/cases/C-boundary-overlap",
+      "case_id": "C-boundary-overlap",
+      "output_dir": "<external-semantic-run-root>/cases/C-boundary-overlap/output",
+      "task": "<external-semantic-run-root>/cases/C-boundary-overlap/task.md"
+    },
+    {
+      "case_dir": "<external-semantic-run-root>/cases/D-source-composition-order-a",
+      "case_id": "D-source-composition-order-a",
+      "output_dir": "<external-semantic-run-root>/cases/D-source-composition-order-a/output",
+      "task": "<external-semantic-run-root>/cases/D-source-composition-order-a/task.md"
+    },
+    {
+      "case_dir": "<external-semantic-run-root>/cases/D-source-composition-order-b",
+      "case_id": "D-source-composition-order-b",
+      "output_dir": "<external-semantic-run-root>/cases/D-source-composition-order-b/output",
+      "task": "<external-semantic-run-root>/cases/D-source-composition-order-b/task.md"
+    },
+    {
+      "case_dir": "<external-semantic-run-root>/cases/G-incremental-correction",
+      "case_id": "G-incremental-correction",
+      "output_dir": "<external-semantic-run-root>/cases/G-incremental-correction/output",
+      "task": "<external-semantic-run-root>/cases/G-incremental-correction/task.md"
+    },
+    {
+      "case_dir": "<external-semantic-run-root>/cases/I-cold-reconstruction",
+      "case_id": "I-cold-reconstruction",
+      "output_dir": "<external-semantic-run-root>/cases/I-cold-reconstruction/output",
+      "task": "<external-semantic-run-root>/cases/I-cold-reconstruction/task.md"
+    }
+  ],
+  "evaluator_sha256": "9c0fdf9d6bd59763fd29bfc089e0b9ca4a5641f7217df618faad069ec183ea47",
+  "evaluator_surface": {
+    "files": [
+      {
+        "path": "scripts/evaluation_contract.py",
+        "sha256": "a94a27ee758ee697de1b12b06b90cc8ba16a31c3afda5492b24ce3c8ae082363"
+      },
+      {
+        "path": "scripts/locator_utils.py",
+        "sha256": "dcba6c5d6ee0ccfc82b55fb3859b9cfd6caf15a4a1c9c3d78ff1c5f50f781fbd"
+      },
+      {
+        "path": "scripts/runtime_contract.py",
+        "sha256": "b5804af8d2758b7e12892fb1321729cf1aa31c0b7a77d6244d44a057381ba518"
+      },
+      {
+        "path": "scripts/semantic_eval.py",
+        "sha256": "9c0fdf9d6bd59763fd29bfc089e0b9ca4a5641f7217df618faad069ec183ea47"
+      }
+    ],
+    "schema_version": 1,
+    "surface_sha256": "0d57eaa9247af16e4b624ef0071ae8ff9d1fd394430076142cd38e87c4a0b0a2"
+  },
+  "fixture_hashes": {
+    "C-boundary-overlap": "2cdd8bff75df548824f1c1212251774e82b2392747a6d4ae0cd078a3277252c3",
+    "D-source-composition-order-a": "af3e0498b5746371a462268aba4423d6183907ec0ae610edc05a427cf43826b1",
+    "D-source-composition-order-b": "6367ca63ab5b0a9ebda0885142ca258f0c42fc1166036d0b41b2846a79f5395f",
+    "G-incremental-correction": "0ecd9d7660581f09ec2706431f8a75b58bfa01e3544ee180842ccde9ce5ecfba",
+    "I-cold-reconstruction": "239aff1a849f3be3bdc44a6b12c025a6b891a701998da8c378a99d27f7fb0e4b"
+  },
+  "oracle_copied_to_run": false,
+  "oracle_sha256": "fc93592f0b3e834bb6a6fee146a44054c017fa4196aad3b809a5b45a2dac5186",
+  "prepared_at": "2026-07-27T04:43:45.566512+00:00",
+  "runtime_isolation": {
+    "allowed_files": [
+      {
+        "path": "SKILL.md",
+        "sha256": "3ac9aa16c32a63a9c48fd977a542ea21fb5ebb850e7a1d4e736b74a4a17223fa"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "sha256": "b7152eb8c7f6ffc8d9a8de2b92da0422738fc87e4e7a11aa31b18e2360e0ce68"
+      },
+      {
+        "path": "assets/starter-bundle/chunk-notes.jsonl",
+        "sha256": "997e535a3e99563e3b1208e7734b7aa5f0899ffe7577ca9fbba0e39c1f7d99b7"
+      },
+      {
+        "path": "assets/starter-bundle/chunks.jsonl",
+        "sha256": "e3fd9fa09593d2ef535d952612cbcb05360908968c720301fbc4c98ea39b7fd3"
+      },
+      {
+        "path": "assets/starter-bundle/claims.jsonl",
+        "sha256": "10b26466c98bdf0c02d21d61fda25cef687a5cef723c3cdee191807c12af6cb6"
+      },
+      {
+        "path": "assets/starter-bundle/coverage.json",
+        "sha256": "e2d68b2f06193a17d2a23dd6835684857f17eb27e0d7bf29114f160458a85e06"
+      },
+      {
+        "path": "assets/starter-bundle/evidence.jsonl",
+        "sha256": "997b0714649ba18bf0be77c839725c24f3a09a80e29616beb18c83c6def7431f"
+      },
+      {
+        "path": "assets/starter-bundle/handoff.md",
+        "sha256": "a8955e1e437b1232f5189871e377eb34d7dd93867f3fb86024dd4e0829b716a2"
+      },
+      {
+        "path": "assets/starter-bundle/inputs/source.txt",
+        "sha256": "1fd4e1f940668c6b039a552ae0d35a07b672ef523d264c93a2fec1ae9e736c34"
+      },
+      {
+        "path": "assets/starter-bundle/run-manifest.json",
+        "sha256": "8b5bd51a4a679cb46900922ebf7b8c04e2f8dce17204545d836e7b594fa149f0"
+      },
+      {
+        "path": "assets/starter-bundle/run-manifest.md",
+        "sha256": "f17743316f10ed4f37fccfc6abb33b6f6cd9f055d9814557b5dba48ee7986142"
+      },
+      {
+        "path": "assets/starter-bundle/sources.jsonl",
+        "sha256": "576859d8b198307d60a3d551c70a72ba98cfdd859ef207587fb75ade52af4775"
+      },
+      {
+        "path": "assets/starter-bundle/synthesis.md",
+        "sha256": "d3ee4afaf8d87ba5a2df71164f83ca9d9f25698f46358a822a0fdd5013c3aeb9"
+      },
+      {
+        "path": "references/evaluation.md",
+        "sha256": "3cd9db8df247e7d369a4521092f65b33a9bb0e3cd0e294a99ba83cff83a3cc23"
+      },
+      {
+        "path": "references/material-types.md",
+        "sha256": "87ab97a47cd8667c4c6e42c6895fc28de68d2a24a7f6629ee49d2369085baf0c"
+      },
+      {
+        "path": "references/workflow.md",
+        "sha256": "632d00dbc1fe3096fa9690205ce8d6c2e3a3b582f13ab6705f7a4f523548e950"
+      },
+      {
+        "path": "scripts/audit_bundle.py",
+        "sha256": "4d502f4721a5d847eaa45d4822a17434994cc54c3c5afffe287830e26f734ad1"
+      },
+      {
+        "path": "scripts/bundle_contract.py",
+        "sha256": "2f41de5102cc266e0bc5f99b5f2e7196b1b696709760059cbb14425c533984ed"
+      },
+      {
+        "path": "scripts/chunk_text.py",
+        "sha256": "682ee2d6f7ae7d8b101caea544fa8f9a8f32b3edae4941ff547f38f3e91322ce"
+      },
+      {
+        "path": "scripts/locator_utils.py",
+        "sha256": "dcba6c5d6ee0ccfc82b55fb3859b9cfd6caf15a4a1c9c3d78ff1c5f50f781fbd"
+      },
+      {
+        "path": "scripts/runtime_contract.py",
+        "sha256": "b5804af8d2758b7e12892fb1321729cf1aa31c0b7a77d6244d44a057381ba518"
+      }
+    ],
+    "file_count": 21,
+    "forbidden_paths_present": false,
+    "mode": "allowlist-copy",
+    "skill_tree_sha256": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed"
+  },
+  "schema_version": 1,
+  "skill_root": "<external-semantic-run-root>/runtime",
+  "skill_tree_sha256": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed"
+}

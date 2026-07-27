@@ -1,0 +1,54 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Determine whether the supplied evidence supports a global October rollout while preserving regional scope, blocking conditions, and source derivation.",
+  "output_mode": "comparison",
+  "required_facets": [
+    "global-readiness",
+    "regional-scope",
+    "blocking-condition",
+    "source-composition",
+    "contradiction"
+  ],
+  "required_risks": [
+    "representation",
+    "source-composition",
+    "source-order"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "Answer yes or no, identify all region-limited, blocking, and derived sources, and support the answer with line-level evidence without treating derived material as independent corroboration.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S4-R1",
+      "S3-R1",
+      "S2-R1",
+      "S1-R1"
+    ],
+    "key_claim_ids": [
+      "C8"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "evidence.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "synthesis.md",
+      "semantic-result.json",
+      "handoff.md"
+    ],
+    "unresolved_gaps": [
+      "All substantive claims remain source-only because no external verification was requested.",
+      "The supplied material does not establish whether or when the EU audit will close."
+    ],
+    "safe_to_drop": [
+      "inputs/S4.txt",
+      "inputs/S3.txt",
+      "inputs/S2.txt",
+      "inputs/S1.txt",
+      "chunks.jsonl"
+    ]
+  }
+}

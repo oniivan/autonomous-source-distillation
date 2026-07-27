@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Determine the exact condition that gates launch while preserving a proposition split across overlapping chunks.",
+  "output_mode": "executive-summary",
+  "required_facets": [
+    "launch-gate"
+  ],
+  "required_risks": [
+    "boundary",
+    "overlap",
+    "representation"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The exact launch gate resolves to one canonical evidence observation spanning source lines 2-3, without overlap inflating support.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1"
+    ],
+    "key_claim_ids": [
+      "C1"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "chunks.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "handoff.md",
+      "semantic-result.json"
+    ],
+    "unresolved_gaps": [
+      "The meeting statement has not been externally verified."
+    ],
+    "safe_to_drop": [
+      "inputs/source.txt"
+    ]
+  }
+}

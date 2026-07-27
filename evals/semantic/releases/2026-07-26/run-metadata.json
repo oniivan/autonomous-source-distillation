@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "case_dir": "<external-run-root>/cases/C-boundary-overlap",
+      "case_id": "C-boundary-overlap",
+      "output_dir": "<external-run-root>/cases/C-boundary-overlap/output",
+      "task": "<external-run-root>/cases/C-boundary-overlap/task.md"
+    },
+    {
+      "case_dir": "<external-run-root>/cases/D-source-composition-order-a",
+      "case_id": "D-source-composition-order-a",
+      "output_dir": "<external-run-root>/cases/D-source-composition-order-a/output",
+      "task": "<external-run-root>/cases/D-source-composition-order-a/task.md"
+    },
+    {
+      "case_dir": "<external-run-root>/cases/D-source-composition-order-b",
+      "case_id": "D-source-composition-order-b",
+      "output_dir": "<external-run-root>/cases/D-source-composition-order-b/output",
+      "task": "<external-run-root>/cases/D-source-composition-order-b/task.md"
+    },
+    {
+      "case_dir": "<external-run-root>/cases/G-incremental-correction",
+      "case_id": "G-incremental-correction",
+      "output_dir": "<external-run-root>/cases/G-incremental-correction/output",
+      "task": "<external-run-root>/cases/G-incremental-correction/task.md"
+    },
+    {
+      "case_dir": "<external-run-root>/cases/I-cold-reconstruction",
+      "case_id": "I-cold-reconstruction",
+      "output_dir": "<external-run-root>/cases/I-cold-reconstruction/output",
+      "task": "<external-run-root>/cases/I-cold-reconstruction/task.md"
+    }
+  ],
+  "fixture_hashes": {
+    "C-boundary-overlap": "2cdd8bff75df548824f1c1212251774e82b2392747a6d4ae0cd078a3277252c3",
+    "D-source-composition-order-a": "af3e0498b5746371a462268aba4423d6183907ec0ae610edc05a427cf43826b1",
+    "D-source-composition-order-b": "6367ca63ab5b0a9ebda0885142ca258f0c42fc1166036d0b41b2846a79f5395f",
+    "G-incremental-correction": "0ecd9d7660581f09ec2706431f8a75b58bfa01e3544ee180842ccde9ce5ecfba",
+    "I-cold-reconstruction": "239aff1a849f3be3bdc44a6b12c025a6b891a701998da8c378a99d27f7fb0e4b"
+  },
+  "oracle_copied_to_run": false,
+  "prepared_at": "2026-07-27T02:55:10.603092+00:00",
+  "schema_version": 1,
+  "skill_root": "$CODEX_HOME/skills/autonomous-source-distillation",
+  "skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07"
+}

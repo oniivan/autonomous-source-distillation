@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "mode": "byte-identical-output-migration-into-prebound-scoring-envelope",
+  "generation_run": "<external-semantic-generation-root>",
+  "scoring_run": "<external-semantic-run-root>",
+  "generation_metadata_ref": "generation-run-metadata.json",
+  "generation_output_manifest_ref": "generation-output-manifest.json",
+  "agents_reran_in_scoring_run": false,
+  "reason": "Evaluator and oracle hashes were added to the preparation contract after fresh-agent generation but before adjudication.",
+  "generation_runtime_sha256": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed",
+  "scoring_runtime_sha256": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed",
+  "case_input_sha256": {
+    "C-boundary-overlap": "2cdd8bff75df548824f1c1212251774e82b2392747a6d4ae0cd078a3277252c3",
+    "D-source-composition-order-a": "af3e0498b5746371a462268aba4423d6183907ec0ae610edc05a427cf43826b1",
+    "D-source-composition-order-b": "6367ca63ab5b0a9ebda0885142ca258f0c42fc1166036d0b41b2846a79f5395f",
+    "G-incremental-correction": "0ecd9d7660581f09ec2706431f8a75b58bfa01e3544ee180842ccde9ce5ecfba",
+    "I-cold-reconstruction": "239aff1a849f3be3bdc44a6b12c025a6b891a701998da8c378a99d27f7fb0e4b"
+  },
+  "output_tree_sha256": {
+    "C-boundary-overlap": "0135c14c800a25ba714b8cf4425c0b17eb61bb3b62a906df98f7ababc3a8bcb6",
+    "D-source-composition-order-a": "02f4aae5fe8d3e411256c1f6345e13dbacbf93402e1ad24b07aee401a0a2ca26",
+    "D-source-composition-order-b": "97739542dda8aa8d7ae5b0143a679a282e9764899d724c2db483cac9427479eb",
+    "G-incremental-correction": "a6440433a2abff4f4c1c078886a7aa6087516336cc35279a6ac27c026a6d6d34",
+    "I-cold-reconstruction": "7a075bd11e19514fcf9eed253707d6c7ce43cc98f3141d62f06b9370171b5ebf"
+  },
+  "assertions": [
+    "The generation and scoring runs used identical runtime and case-input tree hashes.",
+    "Each output directory was copied byte-for-byte without modification.",
+    "The bound scorer and oracle were verified before hidden-answer adjudication."
+  ]
+}

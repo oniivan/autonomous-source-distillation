@@ -1,0 +1,29 @@
+{
+  "schema_version": 3,
+  "facets": [
+    {
+      "facet": "blocker",
+      "status": "covered",
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "facet": "limitations",
+      "status": "covered",
+      "evidence_ids": [
+        "E10"
+      ]
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "representation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S9-R1-C003",
+        "S9-R1-C004"
+      ]
+    }
+  ]
+}

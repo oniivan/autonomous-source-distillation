@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "C-boundary-overlap",
+  "probe_id": "launch-gate",
+  "answer": "Launch remains blocked until the backup restore drill passes.",
+  "claim_ids": [
+    "C1"
+  ],
+  "canonical_evidence_ids": [
+    "E1"
+  ],
+  "support_observation_count": 1
+}

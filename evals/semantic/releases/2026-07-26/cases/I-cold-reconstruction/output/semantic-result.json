@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "case_id": "I-cold-reconstruction",
+  "probe_id": "cold-reconstruction",
+  "release_blocker": "Release remains blocked until the accessibility audit closes.",
+  "scope_caveat": "The available evidence sample excluded mobile users, so its scope is limited.",
+  "verification_status": "Both claims are source-only meeting statements with no external verification recorded; the raw source is intentionally unavailable in the cold-reader packet.",
+  "reload_paths": [
+    "claims.jsonl",
+    "evidence.jsonl",
+    "sources.jsonl"
+  ],
+  "unresolved_gaps": [
+    "The accessibility audit completion date is unknown."
+  ]
+}

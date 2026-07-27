@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "route": "serious",
+  "answers": {
+    "budget_cap": {
+      "answer": "$240,000",
+      "locator": "00:48; line 12"
+    },
+    "launch_date": {
+      "answer": "November 18, 2026",
+      "locator": "03:52; line 58"
+    },
+    "release_blocker": {
+      "answer": "Release remains blocked until the data-retention review closes.",
+      "locator": "07:32; line 113"
+    },
+    "minority_dissent": {
+      "answer": "The reliability lead opposes launch unless the rollback test completes in under 8 minutes.",
+      "locator": "11:24; line 171"
+    },
+    "scope_limitation": {
+      "answer": "The pilot sample excluded mobile users, limiting generalization.",
+      "locator": "14:36; line 219"
+    }
+  },
+  "source_status": "source-only",
+  "unsupported_material_claims": [],
+  "recovery": {
+    "source_ref": "inputs/source.txt",
+    "reload_paths": [
+      "run-manifest.json",
+      "sources.jsonl",
+      "chunk-notes.jsonl",
+      "evidence.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "synthesis.md",
+      "handoff.md"
+    ],
+    "safe_to_drop": [
+      "inputs/source.txt",
+      "chunks.jsonl"
+    ]
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "cases": {
+    "C-boundary-overlap": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 2,
+          "chunks": 2,
+          "claims": 1,
+          "evidence": 3,
+          "sources": 1
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "not-evaluated",
+        "schema_version": "legacy-2",
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": [
+          "legacy bundle: add run-manifest.json schema_version 3 to evaluate readiness"
+        ]
+      },
+      "errors": [
+        "bundle readiness_status is not pass",
+        "evidence E2 source revision: expected 'S1-R1', got None"
+      ],
+      "semantic_result": {
+        "answer": "Launch remains blocked until the backup restore drill passes.",
+        "canonical_evidence_ids": [
+          "E2"
+        ],
+        "case_id": "C-boundary-overlap",
+        "claim_ids": [
+          "C1"
+        ],
+        "probe_id": "launch-gate",
+        "schema_version": 1,
+        "support_observation_count": 1
+      },
+      "status": "fail"
+    },
+    "D-source-composition-order-a": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 4,
+          "chunks": 4,
+          "claims": 5,
+          "evidence": 7,
+          "sources": 4
+        },
+        "errors": [
+          "claim C4: independent sources lack claim evidence: S4",
+          "claim C5: independent sources lack claim evidence: S4"
+        ],
+        "readiness_errors": [],
+        "readiness_status": "not-evaluated",
+        "schema_version": "legacy-2",
+        "status": "fail",
+        "structure_status": "fail",
+        "warnings": [
+          "legacy bundle: add run-manifest.json schema_version 3 to evaluate readiness"
+        ]
+      },
+      "errors": [
+        "bundle structure_status is not pass",
+        "bundle readiness_status is not pass"
+      ],
+      "semantic_result": {
+        "answer": "No. The evidence supports October readiness only for North America, not globally; S2 is wholly derived from S1 and adds no independent support, while S4 blocks a global rollout until the EU audit closes.",
+        "blocking_source_ids": [
+          "S4"
+        ],
+        "case_id": "D-source-composition-order-a",
+        "confidence": "high",
+        "excluded_as_derived_source_ids": [
+          "S2"
+        ],
+        "global_rollout_supported": false,
+        "probe_id": "global-october-rollout",
+        "region_limited_source_ids": [
+          "S1",
+          "S3"
+        ],
+        "schema_version": 1
+      },
+      "status": "fail"
+    },
+    "D-source-composition-order-b": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 4,
+          "chunks": 4,
+          "claims": 5,
+          "evidence": 7,
+          "sources": 4
+        },
+        "errors": [
+          "claim C1: independent sources lack claim evidence: S4",
+          "claim C4: independent sources lack claim evidence: S4"
+        ],
+        "readiness_errors": [],
+        "readiness_status": "not-evaluated",
+        "schema_version": "legacy-2",
+        "status": "fail",
+        "structure_status": "fail",
+        "warnings": [
+          "legacy bundle: add run-manifest.json schema_version 3 to evaluate readiness"
+        ]
+      },
+      "errors": [
+        "bundle structure_status is not pass",
+        "bundle readiness_status is not pass",
+        "answer does not clearly reject unsupported global readiness"
+      ],
+      "semantic_result": {
+        "answer": "No. S1 and S3 support only regional October readiness, S4 blocks a global rollout until the EU audit closes, and S2 is derived entirely from S1 rather than independent corroboration.",
+        "blocking_source_ids": [
+          "S4"
+        ],
+        "case_id": "D-source-composition-order-b",
+        "confidence": "high",
+        "excluded_as_derived_source_ids": [
+          "S2"
+        ],
+        "global_rollout_supported": false,
+        "probe_id": "global-october-rollout",
+        "region_limited_source_ids": [
+          "S3",
+          "S1"
+        ],
+        "schema_version": 1
+      },
+      "status": "fail"
+    },
+    "G-incremental-correction": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 2,
+          "chunks": 2,
+          "claims": 2,
+          "evidence": 2,
+          "sources": 2
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "not-evaluated",
+        "schema_version": "legacy-2",
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": [
+          "legacy bundle: add run-manifest.json schema_version 3 to evaluate readiness"
+        ]
+      },
+      "errors": [
+        "bundle readiness_status is not pass",
+        "current_deadline: expected '2026-10-15', got 'October 15, 2026'",
+        "previous_deadline: expected '2026-09-30', got 'September 30, 2026'",
+        "old claim lifecycle: expected 'superseded', got None",
+        "new claim lifecycle: expected 'active', got None",
+        "old claim lacks reciprocal superseded_by link",
+        "new claim lacks reciprocal supersedes link",
+        "old claim revision: expected {'S1-R1'}, got {'None'}",
+        "new claim revision: expected {'S1-R2'}, got {'None'}"
+      ],
+      "semantic_result": {
+        "answer": "The current filing deadline is October 15, 2026. The earlier September 30, 2026 deadline was explicitly replaced by the correction and is superseded.",
+        "case_id": "G-incremental-correction",
+        "current_deadline": "October 15, 2026",
+        "new_claim_id": "C-S1-DEADLINE-R2",
+        "old_claim_id": "C-S1-DEADLINE-R1",
+        "previous_deadline": "September 30, 2026",
+        "probe_id": "current-deadline",
+        "schema_version": 1
+      },
+      "status": "fail"
+    },
+    "I-cold-reconstruction": {
+      "errors": [
+        "verification_status: expected 'source-only', got 'Both claims are source-only; neither has external verification references.'"
+      ],
+      "semantic_result": {
+        "case_id": "I-cold-reconstruction",
+        "probe_id": "cold-reconstruction",
+        "release_blocker": "Release remains blocked until the accessibility audit closes.",
+        "reload_paths": [
+          "claims.jsonl",
+          "evidence.jsonl",
+          "sources.jsonl"
+        ],
+        "schema_version": 1,
+        "scope_caveat": "The evidence sample excluded mobile users, so the available evidence has limited scope.",
+        "unresolved_gaps": [
+          "The accessibility audit completion date is unknown."
+        ],
+        "verification_status": "Both claims are source-only; neither has external verification references."
+      },
+      "status": "fail"
+    }
+  },
+  "evaluated_at": "2026-07-27T02:54:21.354241+00:00",
+  "oracle_sha256": "fc93592f0b3e834bb6a6fee146a44054c017fa4196aad3b809a5b45a2dac5186",
+  "proof_boundary": "Fresh-agent semantic evidence for cases C, D, G, and I only; not a general factuality guarantee.",
+  "run_metadata": {
+    "cases": [
+      {
+        "case_dir": "<contaminated-external-run-root>/cases/C-boundary-overlap",
+        "case_id": "C-boundary-overlap",
+        "output_dir": "<contaminated-external-run-root>/cases/C-boundary-overlap/output",
+        "task": "<contaminated-external-run-root>/cases/C-boundary-overlap/task.md"
+      },
+      {
+        "case_dir": "<contaminated-external-run-root>/cases/D-source-composition-order-a",
+        "case_id": "D-source-composition-order-a",
+        "output_dir": "<contaminated-external-run-root>/cases/D-source-composition-order-a/output",
+        "task": "<contaminated-external-run-root>/cases/D-source-composition-order-a/task.md"
+      },
+      {
+        "case_dir": "<contaminated-external-run-root>/cases/D-source-composition-order-b",
+        "case_id": "D-source-composition-order-b",
+        "output_dir": "<contaminated-external-run-root>/cases/D-source-composition-order-b/output",
+        "task": "<contaminated-external-run-root>/cases/D-source-composition-order-b/task.md"
+      },
+      {
+        "case_dir": "<contaminated-external-run-root>/cases/G-incremental-correction",
+        "case_id": "G-incremental-correction",
+        "output_dir": "<contaminated-external-run-root>/cases/G-incremental-correction/output",
+        "task": "<contaminated-external-run-root>/cases/G-incremental-correction/task.md"
+      },
+      {
+        "case_dir": "<contaminated-external-run-root>/cases/I-cold-reconstruction",
+        "case_id": "I-cold-reconstruction",
+        "output_dir": "<contaminated-external-run-root>/cases/I-cold-reconstruction/output",
+        "task": "<contaminated-external-run-root>/cases/I-cold-reconstruction/task.md"
+      }
+    ],
+    "fixture_hashes": {
+      "C-boundary-overlap": "2cdd8bff75df548824f1c1212251774e82b2392747a6d4ae0cd078a3277252c3",
+      "D-source-composition-order-a": "af3e0498b5746371a462268aba4423d6183907ec0ae610edc05a427cf43826b1",
+      "D-source-composition-order-b": "6367ca63ab5b0a9ebda0885142ca258f0c42fc1166036d0b41b2846a79f5395f",
+      "G-incremental-correction": "0ecd9d7660581f09ec2706431f8a75b58bfa01e3544ee180842ccde9ce5ecfba",
+      "I-cold-reconstruction": "239aff1a849f3be3bdc44a6b12c025a6b891a701998da8c378a99d27f7fb0e4b"
+    },
+    "oracle_copied_to_run": false,
+    "prepared_at": "2026-07-27T02:45:05.496531+00:00",
+    "schema_version": 1,
+    "skill_root": "<source-checkout>",
+    "skill_tree_sha256": "9fbb575c949be105bbf930fad3cb0f2a79edad79d045233d7dda371bcd14ed3f"
+  },
+  "schema_version": 1,
+  "source_order_invariance": {
+    "different_fields": [],
+    "status": "pass"
+  },
+  "status": "fail"
+}

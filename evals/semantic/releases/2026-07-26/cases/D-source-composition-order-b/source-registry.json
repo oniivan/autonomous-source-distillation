@@ -1,0 +1,32 @@
+[
+  {
+    "source_id": "S4",
+    "source_revision_id": "S4-R1",
+    "source_family_id": "F4",
+    "derived_from_source_ids": [],
+    "source_ref": "inputs/S4.txt"
+  },
+  {
+    "source_id": "S3",
+    "source_revision_id": "S3-R1",
+    "source_family_id": "F3",
+    "derived_from_source_ids": [],
+    "source_ref": "inputs/S3.txt"
+  },
+  {
+    "source_id": "S2",
+    "source_revision_id": "S2-R1",
+    "source_family_id": "F1",
+    "derived_from_source_ids": [
+      "S1"
+    ],
+    "source_ref": "inputs/S2.txt"
+  },
+  {
+    "source_id": "S1",
+    "source_revision_id": "S1-R1",
+    "source_family_id": "F1",
+    "derived_from_source_ids": [],
+    "source_ref": "inputs/S1.txt"
+  }
+]

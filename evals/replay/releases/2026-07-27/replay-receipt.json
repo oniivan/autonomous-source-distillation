@@ -1,0 +1,350 @@
+{
+  "behavioral_binding_status": "pass",
+  "behavioral_case_count": 11,
+  "cases": {
+    "routing/15m/direct": {
+      "audit": null,
+      "audit_required": false,
+      "bundle": "evals/routing/releases/2026-07-27-15m/cases/direct/output",
+      "expected_output_tree_sha256": "4ca16bddb08db492514e42b28da0ef1b943820592cf1be234f06b736efc2420b",
+      "observed_output_tree_sha256": "4ca16bddb08db492514e42b28da0ef1b943820592cf1be234f06b736efc2420b",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "routing/15m/light": {
+      "audit": null,
+      "audit_required": false,
+      "bundle": "evals/routing/releases/2026-07-27-15m/cases/light/output",
+      "expected_output_tree_sha256": "4f358fd9397345780b4c8203d6914ca49e97be4f2f5182bec482c367cf4a6360",
+      "observed_output_tree_sha256": "4f358fd9397345780b4c8203d6914ca49e97be4f2f5182bec482c367cf4a6360",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "routing/15m/serious": {
+      "audit": {
+        "bundle_sha256": "c03d61a0490856319409550a5e5f4e9b090874f83adc43c7f73fa0c9022bbeb1",
+        "counts": {
+          "chunk_notes": 6,
+          "chunks": 6,
+          "claims": 5,
+          "evidence": 5,
+          "sources": 1
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "audit_required": true,
+      "bundle": "evals/routing/releases/2026-07-27-15m/cases/serious/output",
+      "expected_output_tree_sha256": "5c7a82f43f0ae6606e2ec98efd6cb90993c973fe3cfe6c37afbb69745eac9c54",
+      "observed_output_tree_sha256": "5c7a82f43f0ae6606e2ec98efd6cb90993c973fe3cfe6c37afbb69745eac9c54",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "routing/60m/direct": {
+      "audit": null,
+      "audit_required": false,
+      "bundle": "evals/routing/releases/2026-07-27-60m/cases/direct/output",
+      "expected_output_tree_sha256": "85ada134d232b697f90b21f446ed9275c7c64138739e86baac8664e7d3836548",
+      "observed_output_tree_sha256": "85ada134d232b697f90b21f446ed9275c7c64138739e86baac8664e7d3836548",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "routing/60m/light": {
+      "audit": null,
+      "audit_required": false,
+      "bundle": "evals/routing/releases/2026-07-27-60m/cases/light/output",
+      "expected_output_tree_sha256": "d58761ad90549c7cac74391334aba681b28e97cfe377cca64c6900a828b36bc8",
+      "observed_output_tree_sha256": "d58761ad90549c7cac74391334aba681b28e97cfe377cca64c6900a828b36bc8",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "routing/60m/serious": {
+      "audit": {
+        "bundle_sha256": "f1a0dc8d0252fd6cb81e667e9d1cf789467173d4a0431d95dc929b7c08930120",
+        "counts": {
+          "chunk_notes": 7,
+          "chunks": 7,
+          "claims": 5,
+          "evidence": 5,
+          "sources": 1
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "audit_required": true,
+      "bundle": "evals/routing/releases/2026-07-27-60m/cases/serious/output",
+      "expected_output_tree_sha256": "31642ef419a11d53b1b7328404208bfe302b075347299ebc78b5af8e7aee6e77",
+      "observed_output_tree_sha256": "31642ef419a11d53b1b7328404208bfe302b075347299ebc78b5af8e7aee6e77",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "semantic/C-boundary-overlap": {
+      "audit": {
+        "bundle_sha256": "dcd93185a3ecf4296140107c77fb7cd7fb2b1f39266adb4a67e1bcfbf41578bb",
+        "counts": {
+          "chunk_notes": 2,
+          "chunks": 2,
+          "claims": 1,
+          "evidence": 1,
+          "sources": 1
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "audit_required": true,
+      "bundle": "evals/semantic/releases/2026-07-27/cases/C-boundary-overlap/output",
+      "expected_output_tree_sha256": "0135c14c800a25ba714b8cf4425c0b17eb61bb3b62a906df98f7ababc3a8bcb6",
+      "observed_output_tree_sha256": "0135c14c800a25ba714b8cf4425c0b17eb61bb3b62a906df98f7ababc3a8bcb6",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "semantic/D-source-composition-order-a": {
+      "audit": {
+        "bundle_sha256": "fc71cdddfc494555069b4eaa6eecb67e6e8320ffe416dca79d725b2e9781b8ae",
+        "counts": {
+          "chunk_notes": 4,
+          "chunks": 4,
+          "claims": 4,
+          "evidence": 6,
+          "sources": 4
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "audit_required": true,
+      "bundle": "evals/semantic/releases/2026-07-27/cases/D-source-composition-order-a/output",
+      "expected_output_tree_sha256": "02f4aae5fe8d3e411256c1f6345e13dbacbf93402e1ad24b07aee401a0a2ca26",
+      "observed_output_tree_sha256": "02f4aae5fe8d3e411256c1f6345e13dbacbf93402e1ad24b07aee401a0a2ca26",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "semantic/D-source-composition-order-b": {
+      "audit": {
+        "bundle_sha256": "eda3c61897e309ff5ea86b726bb87f8898f3307443074580cfacfa1a923aae35",
+        "counts": {
+          "chunk_notes": 4,
+          "chunks": 4,
+          "claims": 5,
+          "evidence": 7,
+          "sources": 4
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "audit_required": true,
+      "bundle": "evals/semantic/releases/2026-07-27/cases/D-source-composition-order-b/output",
+      "expected_output_tree_sha256": "97739542dda8aa8d7ae5b0143a679a282e9764899d724c2db483cac9427479eb",
+      "observed_output_tree_sha256": "97739542dda8aa8d7ae5b0143a679a282e9764899d724c2db483cac9427479eb",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "semantic/G-incremental-correction": {
+      "audit": {
+        "bundle_sha256": "91d60046450d521a9d4f8a7ff1d752debbeb35cae3708e9303ece2f5e1fa052c",
+        "counts": {
+          "chunk_notes": 2,
+          "chunks": 2,
+          "claims": 2,
+          "evidence": 2,
+          "sources": 2
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "audit_required": true,
+      "bundle": "evals/semantic/releases/2026-07-27/cases/G-incremental-correction/output",
+      "expected_output_tree_sha256": "a6440433a2abff4f4c1c078886a7aa6087516336cc35279a6ac27c026a6d6d34",
+      "observed_output_tree_sha256": "a6440433a2abff4f4c1c078886a7aa6087516336cc35279a6ac27c026a6d6d34",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "semantic/I-cold-reconstruction": {
+      "audit": null,
+      "audit_required": false,
+      "bundle": "evals/semantic/releases/2026-07-27/cases/I-cold-reconstruction/output",
+      "expected_output_tree_sha256": "7a075bd11e19514fcf9eed253707d6c7ce43cc98f3141d62f06b9370171b5ebf",
+      "observed_output_tree_sha256": "7a075bd11e19514fcf9eed253707d6c7ce43cc98f3141d62f06b9370171b5ebf",
+      "output_hash_status": "pass",
+      "status": "pass"
+    },
+    "starter-bundle": {
+      "audit": {
+        "bundle_sha256": "6039451ba41a94f599fae5237829cd00069acfb55ecd22e036c2c05745b415bb",
+        "counts": {
+          "chunk_notes": 1,
+          "chunks": 1,
+          "claims": 3,
+          "evidence": 4,
+          "sources": 1
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "audit_required": true,
+      "bundle": "assets/starter-bundle",
+      "expected_output_tree_sha256": "6039451ba41a94f599fae5237829cd00069acfb55ecd22e036c2c05745b415bb",
+      "observed_output_tree_sha256": "6039451ba41a94f599fae5237829cd00069acfb55ecd22e036c2c05745b415bb",
+      "output_hash_status": "pass",
+      "status": "pass"
+    }
+  },
+  "compatibility_status": "pass",
+  "evaluation_binding_status": "pass",
+  "evaluation_bindings": {
+    "routing/15m": {
+      "evaluator_sha256": "6f5ef5c07efa67f8c83172f0e19c1684d92f499e19616f852f9ddb699c3a5fd1",
+      "evaluator_surface": {
+        "files": [
+          {
+            "path": "scripts/evaluation_contract.py",
+            "sha256": "a94a27ee758ee697de1b12b06b90cc8ba16a31c3afda5492b24ce3c8ae082363"
+          },
+          {
+            "path": "scripts/locator_utils.py",
+            "sha256": "dcba6c5d6ee0ccfc82b55fb3859b9cfd6caf15a4a1c9c3d78ff1c5f50f781fbd"
+          },
+          {
+            "path": "scripts/route_comparison.py",
+            "sha256": "6f5ef5c07efa67f8c83172f0e19c1684d92f499e19616f852f9ddb699c3a5fd1"
+          },
+          {
+            "path": "scripts/runtime_contract.py",
+            "sha256": "b5804af8d2758b7e12892fb1321729cf1aa31c0b7a77d6244d44a057381ba518"
+          }
+        ],
+        "schema_version": 1,
+        "surface_sha256": "3696e16924794db26400e113a124751af278d47c86ad8d64266ee2690050bc44"
+      },
+      "oracle_sha256": "fe4aebc961ec70153452a129f6ac609d56a4cbe5df2e8e1ceafb206662922372",
+      "status": "pass"
+    },
+    "routing/60m": {
+      "evaluator_sha256": "6f5ef5c07efa67f8c83172f0e19c1684d92f499e19616f852f9ddb699c3a5fd1",
+      "evaluator_surface": {
+        "files": [
+          {
+            "path": "scripts/evaluation_contract.py",
+            "sha256": "a94a27ee758ee697de1b12b06b90cc8ba16a31c3afda5492b24ce3c8ae082363"
+          },
+          {
+            "path": "scripts/locator_utils.py",
+            "sha256": "dcba6c5d6ee0ccfc82b55fb3859b9cfd6caf15a4a1c9c3d78ff1c5f50f781fbd"
+          },
+          {
+            "path": "scripts/route_comparison.py",
+            "sha256": "6f5ef5c07efa67f8c83172f0e19c1684d92f499e19616f852f9ddb699c3a5fd1"
+          },
+          {
+            "path": "scripts/runtime_contract.py",
+            "sha256": "b5804af8d2758b7e12892fb1321729cf1aa31c0b7a77d6244d44a057381ba518"
+          }
+        ],
+        "schema_version": 1,
+        "surface_sha256": "3696e16924794db26400e113a124751af278d47c86ad8d64266ee2690050bc44"
+      },
+      "oracle_sha256": "d2145a1c594bb20f0a5d525b67685e19c5859e1d09af7d7f548c205db045e0d6",
+      "status": "pass"
+    },
+    "semantic": {
+      "evaluator_sha256": "9c0fdf9d6bd59763fd29bfc089e0b9ca4a5641f7217df618faad069ec183ea47",
+      "evaluator_surface": {
+        "files": [
+          {
+            "path": "scripts/evaluation_contract.py",
+            "sha256": "a94a27ee758ee697de1b12b06b90cc8ba16a31c3afda5492b24ce3c8ae082363"
+          },
+          {
+            "path": "scripts/locator_utils.py",
+            "sha256": "dcba6c5d6ee0ccfc82b55fb3859b9cfd6caf15a4a1c9c3d78ff1c5f50f781fbd"
+          },
+          {
+            "path": "scripts/runtime_contract.py",
+            "sha256": "b5804af8d2758b7e12892fb1321729cf1aa31c0b7a77d6244d44a057381ba518"
+          },
+          {
+            "path": "scripts/semantic_eval.py",
+            "sha256": "9c0fdf9d6bd59763fd29bfc089e0b9ca4a5641f7217df618faad069ec183ea47"
+          }
+        ],
+        "schema_version": 1,
+        "surface_sha256": "0d57eaa9247af16e4b624ef0071ae8ff9d1fd394430076142cd38e87c4a0b0a2"
+      },
+      "oracle_sha256": "fc93592f0b3e834bb6a6fee146a44054c017fa4196aad3b809a5b45a2dac5186",
+      "status": "pass"
+    }
+  },
+  "fresh_generation_runtime_bindings": {
+    "routing/15m": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed",
+    "routing/60m": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed",
+    "semantic": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed"
+  },
+  "mode": "deterministic-final-runtime-replay",
+  "proof_boundary": "Revalidates unchanged retained bundle bytes against this runtime; it does not rerun agent behavior or expand the semantic proof.",
+  "provenance_checks": {
+    "routing/15m": {
+      "errors": [],
+      "status": "pass"
+    },
+    "routing/60m": {
+      "errors": [],
+      "status": "pass"
+    },
+    "semantic": {
+      "errors": [],
+      "status": "pass"
+    }
+  },
+  "provenance_status": "pass",
+  "releases": {
+    "routing": [
+      "2026-07-27-15m",
+      "2026-07-27-60m"
+    ],
+    "semantic": "2026-07-27"
+  },
+  "replayed_at": "2026-07-27T05:00:37.114096+00:00",
+  "runtime_binding": {
+    "auditor_sha256": "4d502f4721a5d847eaa45d4822a17434994cc54c3c5afffe287830e26f734ad1",
+    "skill_root": "<skill-root>",
+    "skill_tree_sha256": "f96947351524f2389f9213d9a1cdac7dc605fabd6175ddc05a3ed9cbe0526bed"
+  },
+  "schema_version": 1,
+  "source_receipts_status": "pass",
+  "status": "pass",
+  "total_replayed_case_count": 12
+}

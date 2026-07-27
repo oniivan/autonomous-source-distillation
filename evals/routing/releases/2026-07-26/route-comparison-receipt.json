@@ -1,0 +1,203 @@
+{
+  "evaluated_at": "2026-07-27T03:11:39.788042+00:00",
+  "fixture": {
+    "duration_proxy_minutes": 15,
+    "revision_count": 1,
+    "risk": "low",
+    "source_count": 1,
+    "source_words": 2251
+  },
+  "oracle_sha256": "fe4aebc961ec70153452a129f6ac609d56a4cbe5df2e8e1ceafb206662922372",
+  "proof_boundary": "One synthetic low-risk transcript and one model family; recovery is artifact-based rather than a second cold-reader run.",
+  "recommended_route_for_fixture": "direct",
+  "routes": {
+    "direct": {
+      "audit": null,
+      "critical_fact_recall": 1.0,
+      "errors": [],
+      "fact_results": {
+        "budget_cap": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "launch_date": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "minority_dissent": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "release_blocker": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "scope_limitation": {
+          "locator_pass": true,
+          "recovered": true
+        }
+      },
+      "locator_accuracy": 1.0,
+      "measurements": {
+        "artifact_bytes": 1013,
+        "artifact_file_count": 1,
+        "elapsed_seconds": 42.463,
+        "output_token_proxy": 254
+      },
+      "output_tree_sha256": "07f1951582b78813e17418b726711c8621260e809e3b455b0c9fa94c442df4ca",
+      "recovery_features": {
+        "coverage": false,
+        "handoff": false,
+        "machine_manifest": false,
+        "notes": false,
+        "reload_paths_present": false,
+        "reload_paths_resolve": false,
+        "source_ref": true
+      },
+      "status": "pass"
+    },
+    "light": {
+      "audit": null,
+      "critical_fact_recall": 1.0,
+      "errors": [],
+      "fact_results": {
+        "budget_cap": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "launch_date": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "minority_dissent": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "release_blocker": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "scope_limitation": {
+          "locator_pass": true,
+          "recovered": true
+        }
+      },
+      "locator_accuracy": 1.0,
+      "measurements": {
+        "artifact_bytes": 6724,
+        "artifact_file_count": 3,
+        "elapsed_seconds": 113.825,
+        "output_token_proxy": 1681
+      },
+      "output_tree_sha256": "8a0e3aee31c7757ac992565910b0b35d657f576a23872ac2327dda51c3a70c7e",
+      "recovery_features": {
+        "coverage": true,
+        "handoff": false,
+        "machine_manifest": false,
+        "notes": true,
+        "reload_paths_present": true,
+        "reload_paths_resolve": true,
+        "source_ref": true
+      },
+      "status": "pass"
+    },
+    "serious": {
+      "audit": {
+        "counts": {
+          "chunk_notes": 6,
+          "chunks": 6,
+          "claims": 5,
+          "evidence": 5,
+          "sources": 1
+        },
+        "errors": [],
+        "readiness_errors": [],
+        "readiness_status": "pass",
+        "schema_version": 3,
+        "status": "pass",
+        "structure_status": "pass",
+        "warnings": []
+      },
+      "critical_fact_recall": 1.0,
+      "errors": [],
+      "fact_results": {
+        "budget_cap": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "launch_date": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "minority_dissent": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "release_blocker": {
+          "locator_pass": true,
+          "recovered": true
+        },
+        "scope_limitation": {
+          "locator_pass": true,
+          "recovered": true
+        }
+      },
+      "locator_accuracy": 1.0,
+      "measurements": {
+        "artifact_bytes": 33724,
+        "artifact_file_count": 11,
+        "elapsed_seconds": 231.473,
+        "output_token_proxy": 8431
+      },
+      "output_tree_sha256": "cc53f7125281e18411c3dd30e9897e71701c60f9af669ce67f450c494ace83ad",
+      "recovery_features": {
+        "coverage": true,
+        "handoff": true,
+        "machine_manifest": true,
+        "notes": false,
+        "reload_paths_present": true,
+        "reload_paths_resolve": true,
+        "source_ref": true
+      },
+      "status": "pass"
+    }
+  },
+  "run_metadata": {
+    "cases": [
+      {
+        "case_dir": "<external-route-run-root>/cases/direct",
+        "output_dir": "<external-route-run-root>/cases/direct/output",
+        "route": "direct",
+        "task": "<external-route-run-root>/cases/direct/task.md"
+      },
+      {
+        "case_dir": "<external-route-run-root>/cases/light",
+        "output_dir": "<external-route-run-root>/cases/light/output",
+        "route": "light",
+        "task": "<external-route-run-root>/cases/light/task.md"
+      },
+      {
+        "case_dir": "<external-route-run-root>/cases/serious",
+        "output_dir": "<external-route-run-root>/cases/serious/output",
+        "route": "serious",
+        "task": "<external-route-run-root>/cases/serious/task.md"
+      }
+    ],
+    "oracle_copied_to_run": false,
+    "prepared_at": "2026-07-27T02:59:57.434097+00:00",
+    "schema_version": 1,
+    "skill_root": "$CODEX_HOME/skills/autonomous-source-distillation",
+    "skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07",
+    "source_bytes": 12560,
+    "source_sha256": "e7f5027084e59297f1d6e3779fe7d866b1ce3a9bc2f4111f5d6724640f68f302",
+    "source_words": 2251
+  },
+  "runtime_binding": {
+    "expected_skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07",
+    "observed_skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07",
+    "status": "pass"
+  },
+  "schema_version": 1,
+  "status": "pass",
+  "token_measurement": "output_token_proxy is ceil(serialized artifact bytes / 4), excluding copied source bytes; actual model billing tokens are unavailable."
+}

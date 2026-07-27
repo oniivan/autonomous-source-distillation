@@ -1,0 +1,158 @@
+{
+  "repo": "<source-checkout>",
+  "results": [
+    {
+      "case": "baseline",
+      "errors": [],
+      "outcome": "receipt",
+      "status": "pass"
+    },
+    {
+      "case": "skipped_chunk_owns_claim_evidence",
+      "errors": [
+        "chunk note S1-C001: skipped notes cannot own evidence_ids",
+        "chunk note S1-C001: skipped note owns evidence",
+        "evidence E1: owning chunk note must be distilled"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "unsupported_chunk_schema_hash_count",
+      "errors": [],
+      "outcome": "receipt",
+      "status": "pass"
+    },
+    {
+      "case": "superseded_claim_without_lineage",
+      "errors": [],
+      "outcome": "receipt",
+      "status": "pass"
+    },
+    {
+      "case": "independent_source_has_only_opposing_evidence",
+      "errors": [
+        "claim C1: independent sources lack claim evidence: S1"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "contradicted_claim_with_support_only",
+      "errors": [
+        "claim C1: contradicted needs supporting and opposing evidence"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "canonical_duplicate_aliases_in_claim",
+      "errors": [
+        "claim C1: evidence_ids repeat one canonical observation"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "duplicate_facet_evidence_ids",
+      "errors": [
+        "coverage facet 1: evidence_ids must be unique",
+        "coverage facet 1: evidence_ids repeat one canonical observation"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "boolean_line_ranges",
+      "errors": [
+        "chunk S1-C001: content_line_start must be an integer",
+        "chunk S1-C001: content_line_end must be an integer",
+        "chunk S1-C001: line_start must be an integer",
+        "chunk S1-C001: line_end must be an integer",
+        "chunk S1-C001: overlap_line_count must be an integer",
+        "source S1: contiguous-lines coverage requires ranges on every chunk"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "failed_risk_and_unresolved_facet",
+      "errors": [],
+      "outcome": "receipt",
+      "status": "pass"
+    },
+    {
+      "case": "placeholder_markdown_files",
+      "errors": [],
+      "outcome": "receipt",
+      "status": "pass"
+    },
+    {
+      "case": "invalid_note_status_list",
+      "errors": [
+        "chunk note S1-C001: status must be a non-empty string",
+        "evidence E1: owning chunk note must be distilled",
+        "coverage S1: distilled_chunks do not match chunk notes"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "invalid_claim_status_list",
+      "errors": [
+        "claim C1: status must be a non-empty string"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "invalid_risk_status_list",
+      "errors": [
+        "coverage risk 1: status must be a non-empty string"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "invalid_duplicate_of_list",
+      "errors": [
+        "evidence E1: duplicate_of must be null or a non-empty string"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "invalid_evidence_chunk_id_object",
+      "errors": [
+        "evidence E1: chunk_id must be a non-empty string",
+        "chunk note S1-C001: evidence E1 belongs to ",
+        "evidence E1: not listed by chunk note "
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "invalid_evidence_source_id_list",
+      "errors": [
+        "evidence E1: source_id must be a non-empty string",
+        "evidence E1: source_id does not match its chunk",
+        "claim C1: independent sources lack claim evidence: S1"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    },
+    {
+      "case": "invalid_utf8",
+      "errors": [
+        "evidence.jsonl: invalid UTF-8",
+        "chunk note S1-C001: unknown evidence_id E1",
+        "claim C1: unknown evidence_id E1",
+        "claim C1: non-inference claim needs evidence",
+        "claim C1: independent sources lack claim evidence: S1",
+        "coverage facet 1: unknown evidence_id E1"
+      ],
+      "outcome": "receipt",
+      "status": "fail"
+    }
+  ]
+}

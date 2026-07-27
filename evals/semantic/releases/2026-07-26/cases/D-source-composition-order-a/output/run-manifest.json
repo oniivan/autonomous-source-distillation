@@ -1,0 +1,63 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Determine whether the supplied evidence supports a global October rollout while preserving geographic scope, source lineage, independent-source composition, and the EU blocking condition.",
+  "output_mode": "executive-summary",
+  "required_facets": [
+    "regional-readiness",
+    "Europe-coverage",
+    "source-composition",
+    "blocking-condition",
+    "global-decision",
+    "minority-stance"
+  ],
+  "required_risks": [
+    "boundary",
+    "representation",
+    "source-composition",
+    "source-order"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The answer identifies whether global rollout is supported, distinguishes regional evidence from global evidence, excludes derived S2 from independent corroboration, preserves S4's blocker, and resolves every conclusion to line-level evidence.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1",
+      "S2-R1",
+      "S3-R1",
+      "S4-R1"
+    ],
+    "key_claim_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "evidence.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "synthesis.md",
+      "semantic-result.json",
+      "handoff.md"
+    ],
+    "unresolved_gaps": [
+      "No source supplies a completed EU audit or affirmative evidence of Europe readiness.",
+      "The supplied source statements were not externally verified."
+    ],
+    "safe_to_drop": [
+      "inputs/S1.txt",
+      "inputs/S2.txt",
+      "inputs/S3.txt",
+      "inputs/S4.txt",
+      "chunks.jsonl"
+    ]
+  }
+}

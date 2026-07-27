@@ -1,0 +1,128 @@
+{
+  "schema_version": 3,
+  "sources": [
+    {
+      "source_id": "S4",
+      "source_revision_id": "S4-R1",
+      "planned_chunks": [
+        "S4-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S4-R1-C001"
+      ],
+      "skipped_chunks": []
+    },
+    {
+      "source_id": "S3",
+      "source_revision_id": "S3-R1",
+      "planned_chunks": [
+        "S3-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S3-R1-C001"
+      ],
+      "skipped_chunks": []
+    },
+    {
+      "source_id": "S2",
+      "source_revision_id": "S2-R1",
+      "planned_chunks": [
+        "S2-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S2-R1-C001"
+      ],
+      "skipped_chunks": []
+    },
+    {
+      "source_id": "S1",
+      "source_revision_id": "S1-R1",
+      "planned_chunks": [
+        "S1-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S1-R1-C001"
+      ],
+      "skipped_chunks": []
+    }
+  ],
+  "facets": [
+    {
+      "facet": "global-readiness",
+      "status": "covered",
+      "evidence_ids": [
+        "E1",
+        "E3",
+        "E7",
+        "E9"
+      ]
+    },
+    {
+      "facet": "regional-scope",
+      "status": "covered",
+      "evidence_ids": [
+        "E2",
+        "E4",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "facet": "blocking-condition",
+      "status": "covered",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "facet": "source-composition",
+      "status": "covered",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "facet": "contradiction",
+      "status": "covered",
+      "evidence_ids": [
+        "E1",
+        "E7"
+      ]
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "representation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S4-R1-C001",
+        "S3-R1-C001",
+        "S2-R1-C001",
+        "S1-R1-C001"
+      ],
+      "review_note": "All supplied content is preserved as complete one-line plain-text chunks; unavailable underlying records are registered as limits."
+    },
+    {
+      "risk": "source-composition",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S4-R1-C001",
+        "S3-R1-C001",
+        "S2-R1-C001",
+        "S1-R1-C001"
+      ],
+      "review_note": "S2 remains visible as opposing text but shares F1 with and derives entirely from S1, so it is excluded from C8's independent sources."
+    },
+    {
+      "risk": "source-order",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S4-R1-C001",
+        "S3-R1-C001",
+        "S2-R1-C001",
+        "S1-R1-C001"
+      ],
+      "review_note": "A reverse-order stance check left the answer and high confidence unchanged."
+    }
+  ]
+}

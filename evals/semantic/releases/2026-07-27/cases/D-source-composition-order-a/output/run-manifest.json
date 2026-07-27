@@ -1,0 +1,55 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Determine whether the supplied evidence supports a global October rollout while preserving regional scope, blocking evidence, source families, and derivation.",
+  "output_mode": "comparison",
+  "required_facets": [
+    "regional-scope",
+    "europe-coverage",
+    "global-blocker",
+    "source-composition",
+    "derivation"
+  ],
+  "required_risks": [
+    "scope-overgeneralization",
+    "derived-source-inflation",
+    "minority-or-blocking-evidence",
+    "instruction-boundary"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "Answer the probe from all four sources, distinguish North American readiness from global readiness, exclude derived S2 from independent corroboration, and preserve S4's EU blocker with exact line locators.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1",
+      "S2-R1",
+      "S3-R1",
+      "S4-R1"
+    ],
+    "key_claim_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "claims.jsonl",
+      "evidence.jsonl",
+      "coverage.json",
+      "synthesis.md",
+      "semantic-result.json"
+    ],
+    "unresolved_gaps": [
+      "The supplied evidence does not state when the EU audit will close or whether its eventual result will permit rollout."
+    ],
+    "safe_to_drop": [
+      "inputs/S1.txt",
+      "inputs/S2.txt",
+      "inputs/S3.txt",
+      "inputs/S4.txt"
+    ]
+  }
+}

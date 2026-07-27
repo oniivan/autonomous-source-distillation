@@ -1,0 +1,75 @@
+{
+  "schema_version": 3,
+  "sources": [
+    {
+      "source_id": "S1",
+      "source_revision_id": "S1-R1",
+      "planned_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002"
+      ],
+      "distilled_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002"
+      ],
+      "skipped_chunks": []
+    }
+  ],
+  "facets": [
+    {
+      "facet": "launch-gate",
+      "status": "covered",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "facet": "repetition-context",
+      "status": "covered",
+      "evidence_ids": [
+        "E2"
+      ]
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "boundary",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002"
+      ],
+      "finding": "The fragment ending C001 is completed by the loaded overlap plus unique content in C002 and promoted once as E1."
+    },
+    {
+      "risk": "overlap",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C002"
+      ],
+      "finding": "Line 2 is marked as loaded overlap in C002; C1 links only canonical E1, so overlap adds no support observation."
+    },
+    {
+      "risk": "representation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002"
+      ],
+      "finding": "Line-preserving UTF-8 text is sufficient for the wording probe; absent speaker and recording metadata are disclosed."
+    }
+  ],
+  "semantic_probes": [
+    {
+      "probe_id": "launch-gate",
+      "status": "pass",
+      "claim_ids": [
+        "C1"
+      ],
+      "canonical_evidence_ids": [
+        "E1"
+      ],
+      "support_observation_count": 1
+    }
+  ]
+}

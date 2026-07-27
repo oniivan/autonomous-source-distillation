@@ -1,0 +1,44 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Determine the current filing deadline and preserve what happened to the earlier deadline across two revisions of one logical source.",
+  "output_mode": "timeline",
+  "required_facets": [
+    "deadline",
+    "correction-history"
+  ],
+  "required_risks": [
+    "revision-drift",
+    "representation"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The current and previous filing deadlines resolve to exact revision-specific evidence, and the old and new claims have reciprocal supersession links.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1",
+      "S1-R2"
+    ],
+    "key_claim_ids": [
+      "C1",
+      "C2"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "synthesis.md",
+      "handoff.md"
+    ],
+    "unresolved_gaps": [
+      "The deadline claims are source-only and were not externally verified."
+    ],
+    "safe_to_drop": [
+      "inputs/policy-r1.txt",
+      "inputs/policy-r2.txt",
+      "chunks.jsonl"
+    ]
+  }
+}

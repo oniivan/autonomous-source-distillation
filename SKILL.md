@@ -17,7 +17,24 @@ because all source text can fit in one prompt.
 
 ## Route
 
-- Use this skill directly for transcripts, captions, logs, issue threads, chat exports, meeting notes, reports, or any long text the user gives you.
+- **Direct:** default for one stable, low-risk source when one careful pass can satisfy
+  the completion oracle, with no audit or resume need. This commonly covers a 10-20
+  minute transcript and can extend to longer clear, sparse material. Preserve useful
+  native locators and return source-only caveats with the answer.
+- **Light:** use when density, structure, boundary risk, a few sources, or later reuse
+  makes one-pass recall unreliable but a durable audited bundle is unnecessary. A
+  30-90 minute transcript is a prompt to assess these risks, not an automatic escalation.
+  Segment adaptively, keep compact chunk notes and a coverage table, then synthesize.
+- **Serious:** use the full versioned bundle for multiple revisions, many sources,
+  high-stakes facts, difficult representation, explicit audit, cross-session handoff,
+  compaction risk, or work above roughly 15,000 words. Any serious trigger overrides size.
+
+These are routing heuristics, not token limits or evidence-backed length cutoffs.
+Escalate whenever a smaller route cannot meet the completion oracle; de-escalate only
+when fidelity, recovery, and verification needs remain satisfied.
+
+- Use this skill directly for transcripts, captions, logs, issue threads, chat exports,
+  meeting notes, reports, or other long source material.
 - Pair with `autonomous-research-one-shot` when the long material is part of source-backed research or needs external verification.
 - Pair with `autonomous-project-onboarding` or `autonomous-goal-compiler` when the distilled material feeds a larger project, plan, or compaction-risky autonomous run.
 - Pair with debugging/review skills after distillation when the material is a log, test output, incident timeline, PR thread, or code/search dump.
@@ -87,11 +104,11 @@ durable ledgers or chunk notes exist.
 
 ## Required Outputs
 
-For small jobs, return:
+For direct or light jobs, return proportionate versions of:
 
 - objective and fidelity profile;
 - source list with IDs, revisions, representation limits, and locators;
-- chunk notes or a compact chunk table with explicit coverage;
+- compact chunk notes or a coverage table when the light route is used;
 - synthesis organized around the user's goal;
 - caveats, contradictions, source-only claims, and follow-up verification targets.
 
@@ -99,6 +116,8 @@ For serious or resumable jobs, create durable files:
 
 ```text
 <work-dir>/
+  inputs/
+  run-manifest.json
   run-manifest.md
   sources.jsonl
   chunks.jsonl
@@ -110,13 +129,19 @@ For serious or resumable jobs, create durable files:
   handoff.md
 ```
 
+Copy local source bytes under `inputs/` before registering them so the bundle remains
+self-contained and the auditor can bind each relative `source_ref` to its digest.
 Use Markdown ledgers instead when human editing is the primary need, but preserve the
 same IDs and fields. See `references/workflow.md` for schemas. For structured bundles,
-run:
+resolve `ASD_SKILL_ROOT` to the directory containing this loaded `SKILL.md`, then run:
 
 ```bash
-python scripts/audit_bundle.py <work-dir>
+python3 "$ASD_SKILL_ROOT/scripts/audit_bundle.py" <work-dir> --require-ready
 ```
+
+The receipt reports structural validity and delivery readiness separately. Semantic
+performance belongs in a separate fresh-agent evaluation receipt, never in the
+deterministic auditor.
 
 ## Gates
 
@@ -147,6 +172,7 @@ python scripts/audit_bundle.py <work-dir>
 - `scripts/chunk_text.py`: mechanical fallback chunker with unique-content, overlap,
   hash, line, and best-effort timestamp metadata.
 - `scripts/audit_bundle.py`: structural and referential audit for serious JSONL bundles.
+- `assets/starter-bundle/`: complete schema-v3 serious bundle that passes readiness audit.
 
 ## Common Mistakes
 

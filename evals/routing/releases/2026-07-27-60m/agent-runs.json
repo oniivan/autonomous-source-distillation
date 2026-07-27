@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "agent_id": "019fa1bf-2af6-7770-99f3-ce8bc27abf41",
+      "route": "direct",
+      "status": "completed"
+    },
+    {
+      "agent_id": "019fa1bf-2b8e-7461-a001-3de187efa89a",
+      "route": "light",
+      "status": "completed"
+    },
+    {
+      "agent_id": "019fa1bf-2c07-7501-8181-64b99e6fdef0",
+      "route": "serious",
+      "status": "completed"
+    }
+  ],
+  "scoring_correction": {
+    "agents_reran": false,
+    "outputs_and_dispatch_markers_preserved": true
+  }
+}

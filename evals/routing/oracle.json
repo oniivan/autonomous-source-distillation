@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "word_target": 2250,
+  "facts": {
+    "budget_cap": {
+      "line": 12,
+      "term_groups": [
+        [
+          "240000",
+          "240,000"
+        ]
+      ]
+    },
+    "launch_date": {
+      "line": 58,
+      "term_groups": [
+        [
+          "november",
+          "11"
+        ],
+        [
+          "18"
+        ],
+        [
+          "2026"
+        ]
+      ]
+    },
+    "release_blocker": {
+      "line": 113,
+      "term_groups": [
+        [
+          "blocked",
+          "blocker"
+        ],
+        [
+          "data",
+          "retention"
+        ],
+        [
+          "review"
+        ]
+      ]
+    },
+    "minority_dissent": {
+      "line": 171,
+      "term_groups": [
+        [
+          "reliability"
+        ],
+        [
+          "oppose",
+          "opposes",
+          "object"
+        ],
+        [
+          "rollback"
+        ],
+        [
+          "8",
+          "eight"
+        ],
+        [
+          "minute"
+        ]
+      ]
+    },
+    "scope_limitation": {
+      "line": 219,
+      "term_groups": [
+        [
+          "mobile"
+        ],
+        [
+          "exclude",
+          "excluded"
+        ],
+        [
+          "pilot",
+          "sample"
+        ]
+      ]
+    }
+  }
+}

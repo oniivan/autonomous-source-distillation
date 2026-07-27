@@ -1,0 +1,77 @@
+{
+  "schema_version": 3,
+  "sources": [
+    {
+      "source_id": "S1",
+      "source_revision_id": "S1-R1",
+      "planned_chunks": [
+        "S1-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S1-R1-C001"
+      ],
+      "skipped_chunks": []
+    },
+    {
+      "source_id": "S1",
+      "source_revision_id": "S1-R2",
+      "planned_chunks": [
+        "S1-R2-C001"
+      ],
+      "distilled_chunks": [
+        "S1-R2-C001"
+      ],
+      "skipped_chunks": []
+    }
+  ],
+  "facets": [
+    {
+      "facet": "current-deadline",
+      "status": "covered",
+      "evidence_ids": [
+        "E-DEADLINE-R2",
+        "E-SUPERSESSION-R2"
+      ]
+    },
+    {
+      "facet": "previous-deadline",
+      "status": "covered",
+      "evidence_ids": [
+        "E-DEADLINE-R1"
+      ]
+    },
+    {
+      "facet": "supersession",
+      "status": "covered",
+      "evidence_ids": [
+        "E-SUPERSESSION-R2"
+      ]
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "revision-correction",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R2-C001"
+      ]
+    },
+    {
+      "risk": "representation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R2-C001"
+      ]
+    },
+    {
+      "risk": "boundary",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R2-C001"
+      ]
+    }
+  ]
+}

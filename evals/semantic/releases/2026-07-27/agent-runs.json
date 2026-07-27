@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "agent_id": "019fa1b8-bca7-73a1-81ad-04a72ff279b6",
+      "case_id": "C-boundary-overlap",
+      "status": "completed"
+    },
+    {
+      "agent_id": "019fa1b8-e08a-7ea0-8ca6-9973e93bb56e",
+      "case_id": "D-source-composition-order-a",
+      "status": "completed"
+    },
+    {
+      "agent_id": "019fa1b8-fbec-7e31-a98c-e1a08267a8fc",
+      "case_id": "D-source-composition-order-b",
+      "status": "completed"
+    },
+    {
+      "agent_id": "019fa1b9-141e-7940-9e96-d88c38fd89e8",
+      "case_id": "G-incremental-correction",
+      "status": "completed"
+    },
+    {
+      "agent_id": "019fa1b9-2b66-7640-badc-1f8231455a5c",
+      "case_id": "I-cold-reconstruction",
+      "status": "completed"
+    }
+  ]
+}

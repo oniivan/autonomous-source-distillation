@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "clean_run": [
+    {
+      "case_id": "C-boundary-overlap",
+      "agent_id": "019fa17f-8d91-7aa3-9e95-b395969e0343",
+      "status": "completed"
+    },
+    {
+      "case_id": "D-source-composition-order-a",
+      "agent_id": "019fa17f-b03a-7790-9f8e-ab355c83d9eb",
+      "status": "completed"
+    },
+    {
+      "case_id": "D-source-composition-order-b",
+      "agent_id": "019fa17f-cc79-7221-9b41-8de58531685b",
+      "status": "completed"
+    },
+    {
+      "case_id": "G-incremental-correction",
+      "agent_id": "019fa17f-f4e4-70c0-b522-3f2dc293dff9",
+      "status": "completed"
+    },
+    {
+      "case_id": "I-cold-reconstruction",
+      "agent_id": "019fa180-17da-75b0-bbe1-b8f8ed1a5ce9",
+      "status": "completed"
+    }
+  ],
+  "contaminated_run": [
+    {
+      "case_id": "C-boundary-overlap",
+      "agent_id": "019fa176-5eff-7cf3-8292-4ef5a4bce979"
+    },
+    {
+      "case_id": "D-source-composition-order-a",
+      "agent_id": "019fa176-7206-73b3-b5ba-e13277a6d288"
+    },
+    {
+      "case_id": "D-source-composition-order-b",
+      "agent_id": "019fa176-8842-73b1-8ccd-a59f167fc150"
+    },
+    {
+      "case_id": "G-incremental-correction",
+      "agent_id": "019fa176-a2f4-72c1-9941-068df9fcc0e1"
+    },
+    {
+      "case_id": "I-cold-reconstruction",
+      "agent_id": "019fa176-c48e-7922-8f23-e957ebae470d"
+    }
+  ]
+}

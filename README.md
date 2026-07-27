@@ -15,6 +15,13 @@ handoff artifacts.
 Clone the repository into your personal Codex skills directory:
 
 ```bash
+git clone https://github.com/oniivan/autonomous-source-distillation.git \
+  ~/.codex/skills/autonomous-source-distillation
+```
+
+SSH alternative:
+
+```bash
 git clone git@github.com:oniivan/autonomous-source-distillation.git \
   ~/.codex/skills/autonomous-source-distillation
 ```
@@ -24,7 +31,7 @@ with:
 
 ```text
 Use $autonomous-source-distillation to distill this transcript into source-linked notes,
-auditable claims, coverage checks, and a concise synthesis.
+choosing only the notes, coverage, and audit artifacts its risk and recovery needs.
 ```
 
 ## Core Method
@@ -44,12 +51,14 @@ live under [references/](references/).
 ## Utilities
 
 The scripts require Python 3.10 or newer and use only the standard library.
+Run these repository-development commands from the cloned repository root.
 
 Create auditable fallback chunks:
 
 ```bash
 python3 scripts/chunk_text.py transcript.txt \
   --source-id VIDEO-1 \
+  --source-revision-id VIDEO-1-R1 \
   --boundary-mode paragraph \
   --format jsonl \
   --output chunks.jsonl
@@ -58,7 +67,13 @@ python3 scripts/chunk_text.py transcript.txt \
 Audit a serious structured bundle:
 
 ```bash
-python3 scripts/audit_bundle.py path/to/work-dir
+python3 scripts/audit_bundle.py path/to/work-dir --require-ready
+```
+
+Verify the complete starter bundle:
+
+```bash
+python3 scripts/audit_bundle.py assets/starter-bundle --require-ready
 ```
 
 Run the package tests:
@@ -66,6 +81,18 @@ Run the package tests:
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+
+Run the deterministic release gates:
+
+```bash
+python3 scripts/run_mutation_suite.py
+python3 scripts/benchmark_resources.py run --receipt /tmp/asd-resource-receipt.json
+```
+
+Fresh-agent semantic and route-comparison protocols are documented under
+[`evals/semantic/`](evals/semantic/) and [`evals/routing/`](evals/routing/). Their
+committed release receipts keep raw outputs and proof boundaries separate from the
+deterministic bundle auditor.
 
 ## Methodology
 
@@ -81,4 +108,5 @@ status of emerging techniques. These files are provenance, not runtime dependenc
   extraction or inspection tool before textual distillation.
 - Deterministic bundle checks prove structure and reference integrity, not semantic
   completeness or factual truth.
-
+- Schema-v3 audit receipts separate `structure_status` from `readiness_status`; semantic
+  release evidence remains a separate fresh-agent receipt.

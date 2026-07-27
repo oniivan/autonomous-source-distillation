@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "C-boundary-overlap": {
+    "probe_id": "launch-gate",
+    "answer_term_groups": [
+      [
+        "launch"
+      ],
+      [
+        "blocked",
+        "gate"
+      ],
+      [
+        "backup"
+      ],
+      [
+        "restore"
+      ],
+      [
+        "drill"
+      ],
+      [
+        "pass",
+        "passes"
+      ]
+    ],
+    "support_observation_count": 1,
+    "source_revision_id": "S1-R1",
+    "locator_line_numbers": [
+      2,
+      3
+    ]
+  },
+  "D-source-composition": {
+    "probe_id": "global-october-rollout",
+    "global_rollout_supported": false,
+    "region_limited_source_ids": [
+      "S1",
+      "S3"
+    ],
+    "blocking_source_ids": [
+      "S4"
+    ],
+    "excluded_as_derived_source_ids": [
+      "S2"
+    ]
+  },
+  "G-incremental-correction": {
+    "probe_id": "current-deadline",
+    "current_deadline": "2026-10-15",
+    "previous_deadline": "2026-09-30",
+    "old_revision_id": "S1-R1",
+    "new_revision_id": "S1-R2"
+  },
+  "I-cold-reconstruction": {
+    "probe_id": "cold-reconstruction",
+    "blocker_term_groups": [
+      [
+        "release"
+      ],
+      [
+        "accessibility"
+      ],
+      [
+        "audit"
+      ],
+      [
+        "close",
+        "closes",
+        "closure",
+        "closed"
+      ]
+    ],
+    "caveat_term_groups": [
+      [
+        "mobile"
+      ],
+      [
+        "excluded",
+        "exclude"
+      ]
+    ],
+    "verification_status": "source-only",
+    "reload_paths": [
+      "claims.jsonl",
+      "evidence.jsonl",
+      "sources.jsonl"
+    ],
+    "unresolved_gap_terms": [
+      "completion",
+      "date",
+      "unknown"
+    ]
+  }
+}

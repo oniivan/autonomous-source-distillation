@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "route": "light",
+  "source": {
+    "id": "S1",
+    "ref": "inputs/source.txt",
+    "sha256": "e7f5027084e59297f1d6e3779fe7d866b1ce3a9bc2f4111f5d6724640f68f302",
+    "total_lines": 225,
+    "locator_scheme": "1-based file line plus native MM:SS timestamp",
+    "representation_limits": [
+      "Plain-text transcript only; no audio is available for validation.",
+      "General speaker labels are absent."
+    ]
+  },
+  "planned_regions": [
+    {
+      "chunk_id": "C1",
+      "line_start": 1,
+      "line_end": 45,
+      "timestamp_start": "00:04",
+      "timestamp_end": "03:00",
+      "status": "distilled",
+      "boundary_risk": "low",
+      "required_facets": [
+        "budget_cap"
+      ],
+      "evidence": [
+        {
+          "facet": "budget_cap",
+          "line": 12,
+          "timestamp": "00:48"
+        }
+      ]
+    },
+    {
+      "chunk_id": "C2",
+      "line_start": 46,
+      "line_end": 90,
+      "timestamp_start": "03:04",
+      "timestamp_end": "06:00",
+      "status": "distilled",
+      "boundary_risk": "low",
+      "required_facets": [
+        "launch_date"
+      ],
+      "evidence": [
+        {
+          "facet": "launch_date",
+          "line": 58,
+          "timestamp": "03:52"
+        }
+      ]
+    },
+    {
+      "chunk_id": "C3",
+      "line_start": 91,
+      "line_end": 135,
+      "timestamp_start": "06:04",
+      "timestamp_end": "09:00",
+      "status": "distilled",
+      "boundary_risk": "low",
+      "required_facets": [
+        "release_blocker"
+      ],
+      "evidence": [
+        {
+          "facet": "release_blocker",
+          "line": 113,
+          "timestamp": "07:32"
+        }
+      ]
+    },
+    {
+      "chunk_id": "C4",
+      "line_start": 136,
+      "line_end": 180,
+      "timestamp_start": "09:04",
+      "timestamp_end": "12:00",
+      "status": "distilled",
+      "boundary_risk": "low",
+      "required_facets": [
+        "minority_dissent"
+      ],
+      "evidence": [
+        {
+          "facet": "minority_dissent",
+          "line": 171,
+          "timestamp": "11:24"
+        }
+      ]
+    },
+    {
+      "chunk_id": "C5",
+      "line_start": 181,
+      "line_end": 225,
+      "timestamp_start": "12:04",
+      "timestamp_end": "15:00",
+      "status": "distilled",
+      "boundary_risk": "low",
+      "required_facets": [
+        "scope_limitation"
+      ],
+      "evidence": [
+        {
+          "facet": "scope_limitation",
+          "line": 219,
+          "timestamp": "14:36"
+        }
+      ]
+    }
+  ],
+  "coverage_summary": {
+    "covered_lines": 225,
+    "skipped_lines": 0,
+    "coverage_complete": true,
+    "required_facets_checked": [
+      "budget_cap",
+      "launch_date",
+      "release_blocker",
+      "minority_dissent",
+      "scope_limitation"
+    ],
+    "missing_required_facets": [],
+    "minority_evidence_checked": true,
+    "contradictions_checked": true,
+    "contradictions_found": []
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Determine whether the supplied evidence supports a global October rollout while preserving regional limits, blocking evidence, source families, and derivation.",
+  "output_mode": "comparison",
+  "required_facets": [
+    "regional-scope",
+    "europe-evidence",
+    "blocking-condition",
+    "source-composition"
+  ],
+  "required_risks": [
+    "boundary",
+    "representation",
+    "source-composition",
+    "instruction-boundary"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The answer identifies whether a global October rollout is supported, distinguishes regional from global evidence, retains the EU blocker, and excludes derived material from independent corroboration.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S4-R1",
+      "S3-R1",
+      "S2-R1",
+      "S1-R1"
+    ],
+    "key_claim_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "reload_paths": [
+      "sources.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "synthesis.md",
+      "handoff.md"
+    ],
+    "unresolved_gaps": [
+      "No external verification was requested or performed.",
+      "The supplied sources do not report whether the EU audit has closed."
+    ],
+    "safe_to_drop": [
+      "inputs/S4.txt",
+      "inputs/S3.txt",
+      "inputs/S2.txt",
+      "inputs/S1.txt",
+      "chunks.jsonl"
+    ]
+  }
+}

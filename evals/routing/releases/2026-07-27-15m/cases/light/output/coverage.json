@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "route": "light",
+  "source": {
+    "source_id": "S1",
+    "source_ref": "inputs/source.txt",
+    "source_sha256": "e7f5027084e59297f1d6e3779fe7d866b1ce3a9bc2f4111f5d6724640f68f302",
+    "line_count": 225,
+    "locator_scheme": "timestamp+line",
+    "status": "fully-distilled"
+  },
+  "regions": [
+    {
+      "chunk_id": "C001",
+      "line_range": "1-45",
+      "timestamp_range": "00:04-03:00",
+      "status": "distilled",
+      "facets_found": [
+        "budget_cap"
+      ],
+      "evidence_locators": [
+        "inputs/source.txt:12 (00:48)"
+      ]
+    },
+    {
+      "chunk_id": "C002",
+      "line_range": "46-90",
+      "timestamp_range": "03:04-06:00",
+      "status": "distilled",
+      "facets_found": [
+        "launch_date"
+      ],
+      "evidence_locators": [
+        "inputs/source.txt:58 (03:52)"
+      ]
+    },
+    {
+      "chunk_id": "C003",
+      "line_range": "91-135",
+      "timestamp_range": "06:04-09:00",
+      "status": "distilled",
+      "facets_found": [
+        "release_blocker"
+      ],
+      "evidence_locators": [
+        "inputs/source.txt:113 (07:32)"
+      ]
+    },
+    {
+      "chunk_id": "C004",
+      "line_range": "136-180",
+      "timestamp_range": "09:04-12:00",
+      "status": "distilled",
+      "facets_found": [
+        "minority_dissent"
+      ],
+      "evidence_locators": [
+        "inputs/source.txt:171 (11:24)"
+      ]
+    },
+    {
+      "chunk_id": "C005",
+      "line_range": "181-225",
+      "timestamp_range": "12:04-15:00",
+      "status": "distilled",
+      "facets_found": [
+        "scope_limitation"
+      ],
+      "evidence_locators": [
+        "inputs/source.txt:219 (14:36)"
+      ]
+    }
+  ],
+  "facets": [
+    {
+      "facet": "budget_cap",
+      "status": "covered",
+      "locator": "inputs/source.txt:12 (00:48)"
+    },
+    {
+      "facet": "launch_date",
+      "status": "covered",
+      "locator": "inputs/source.txt:58 (03:52)"
+    },
+    {
+      "facet": "release_blocker",
+      "status": "covered",
+      "locator": "inputs/source.txt:113 (07:32)"
+    },
+    {
+      "facet": "minority_dissent",
+      "status": "covered",
+      "locator": "inputs/source.txt:171 (11:24)"
+    },
+    {
+      "facet": "scope_limitation",
+      "status": "covered",
+      "locator": "inputs/source.txt:219 (14:36)"
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "boundary",
+      "status": "pass",
+      "note": "Five contiguous, non-overlapping regions account for lines 1-225."
+    },
+    {
+      "risk": "sparse-middle",
+      "status": "pass",
+      "note": "Every region was reviewed, including the facts at lines 12, 58, 113, 171, and 219."
+    },
+    {
+      "risk": "representation",
+      "status": "pass-with-caveat",
+      "note": "The text preserves timestamps and line order, but supplies no speaker labels."
+    },
+    {
+      "risk": "contradiction-or-qualification",
+      "status": "pass",
+      "note": "All lines were checked; the launch condition, dissent condition, and sample limitation remain explicit."
+    }
+  ],
+  "skipped_regions": [],
+  "unresolved": [],
+  "coverage_complete": true,
+  "verification_status": "source-only"
+}

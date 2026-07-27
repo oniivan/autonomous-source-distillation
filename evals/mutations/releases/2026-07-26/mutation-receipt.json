@@ -1,0 +1,302 @@
+{
+  "cases": [
+    {
+      "case": "baseline",
+      "errors": [],
+      "exception": null,
+      "expected_readiness_status": "pass",
+      "expected_structure_status": "pass",
+      "observed_readiness_status": "pass",
+      "observed_structure_status": "pass",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "unsupported_schema",
+      "errors": [
+        "chunk S1-R1-C001: unsupported schema_version 999; expected 3"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "source_hash_skew",
+      "errors": [
+        "chunk S1-R1-C001: source_sha256 does not match source registry"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "skipped_note_owns_evidence",
+      "errors": [
+        "chunk note S1-R1-C001: skipped notes cannot own evidence_ids",
+        "chunk note S1-R1-C001: skipped note owns evidence",
+        "evidence E1: owning chunk note must be distilled",
+        "evidence E2: owning chunk note must be distilled",
+        "evidence E3: owning chunk note must be distilled",
+        "evidence E4: owning chunk note must be distilled",
+        "coverage source revision S1-R1: distilled_chunks do not match chunk notes",
+        "coverage source revision S1-R1: skipped_chunks do not match chunk notes"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [
+        "coverage.json: no distilled chunks; all-skipped work is not ready"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": "superseded_without_lineage",
+      "errors": [
+        "claim C1: superseded claim needs superseded_by_claim_ids"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "opposition_declared_as_support",
+      "errors": [
+        "claim C1: supporting_source_ids do not match supporting evidence",
+        "claim C1: opposing_source_ids do not match opposing evidence",
+        "claim C1: source-only needs supporting evidence",
+        "claim C1: independent sources lack claim evidence: S1",
+        "claim C1: independent_source_ids must represent every supporting source family exactly once"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "canonical_duplicate_inflation",
+      "errors": [
+        "claim C1: evidence_ids repeat one canonical observation"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "duplicate_facet_evidence",
+      "errors": [
+        "coverage facet 1: evidence_ids must be unique",
+        "coverage facet 1: evidence_ids repeat one canonical observation"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "boolean_line_ranges",
+      "errors": [
+        "chunk S1-R1-C001: content_line_start must be an integer",
+        "chunk S1-R1-C001: content_line_end must be an integer",
+        "chunk S1-R1-C001: line_start must be an integer",
+        "chunk S1-R1-C001: line_end must be an integer",
+        "chunk S1-R1-C001: overlap_line_count must be an integer",
+        "source revision S1-R1: contiguous-lines coverage requires ranges on every chunk"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "failed_risk_and_unresolved_facet",
+      "errors": [],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "pass",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "pass",
+      "readiness_errors": [
+        "coverage facet 2: unresolved facet blocks readiness",
+        "coverage risk 1: fail risk blocks readiness"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": "heading_only_markdown",
+      "errors": [],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "pass",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "pass",
+      "readiness_errors": [
+        "run-manifest.md: needs substantive content beyond headings",
+        "synthesis.md: needs substantive content beyond headings",
+        "handoff.md: needs substantive content beyond headings"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": "invalid_note_status_type",
+      "errors": [
+        "chunk note S1-R1-C001: status must be a non-empty string",
+        "evidence E1: owning chunk note must be distilled",
+        "evidence E2: owning chunk note must be distilled",
+        "evidence E3: owning chunk note must be distilled",
+        "evidence E4: owning chunk note must be distilled",
+        "coverage source revision S1-R1: distilled_chunks do not match chunk notes"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [
+        "coverage.json: no distilled chunks; all-skipped work is not ready"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": "invalid_claim_status_type",
+      "errors": [
+        "claim C1: verification_status must be a non-empty string"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "invalid_duplicate_type",
+      "errors": [
+        "evidence E1: duplicate_of must be null or a non-empty string"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "invalid_evidence_chunk_type",
+      "errors": [
+        "evidence E1: chunk_id must be a non-empty string",
+        "chunk note S1-R1-C001: evidence E1 belongs to ",
+        "evidence E1: not listed by chunk note "
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "invalid_evidence_source_type",
+      "errors": [
+        "evidence E1: source_id must be a non-empty string",
+        "evidence E1: source_id does not match source revision",
+        "evidence E1: source_id does not match its chunk",
+        "claim C1: supporting_source_ids do not match supporting evidence",
+        "claim C1: independent sources lack claim evidence: S1",
+        "claim C1: independent_source_ids must represent every supporting source family exactly once"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "invalid_utf8",
+      "errors": [
+        "evidence.jsonl: invalid UTF-8",
+        "chunk note S1-R1-C001: unknown evidence_id E1",
+        "chunk note S1-R1-C001: unknown evidence_id E2",
+        "chunk note S1-R1-C001: unknown evidence_id E3",
+        "chunk note S1-R1-C001: unknown evidence_id E4",
+        "claim C1: unknown evidence_id E1",
+        "claim C1: supporting_source_ids do not match supporting evidence",
+        "claim C1: factual claim needs evidence",
+        "claim C1: source-only needs supporting evidence",
+        "claim C1: independent sources lack claim evidence: S1",
+        "claim C1: independent_source_ids must represent every supporting source family exactly once",
+        "claim C2: unknown evidence_id E2",
+        "claim C2: unknown evidence_id E3",
+        "claim C2: supporting_source_ids do not match supporting evidence",
+        "claim C2: qualifying_source_ids do not match qualifying evidence",
+        "claim C2: factual claim needs evidence",
+        "claim C2: source-only needs supporting evidence",
+        "claim C2: independent sources lack claim evidence: S1",
+        "claim C2: independent_source_ids must represent every supporting source family exactly once",
+        "claim C3: unknown evidence_id E4",
+        "claim C3: supporting_source_ids do not match supporting evidence",
+        "claim C3: factual claim needs evidence",
+        "claim C3: source-only needs supporting evidence",
+        "claim C3: independent sources lack claim evidence: S1",
+        "claim C3: independent_source_ids must represent every supporting source family exactly once",
+        "coverage facet 1: unknown evidence_id E2",
+        "coverage facet 2: unknown evidence_id E4"
+      ],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "fail",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "fail",
+      "readiness_errors": [],
+      "status": "pass"
+    },
+    {
+      "case": "all_skipped",
+      "errors": [],
+      "exception": null,
+      "expected_readiness_status": "fail",
+      "expected_structure_status": "pass",
+      "observed_readiness_status": "fail",
+      "observed_structure_status": "pass",
+      "readiness_errors": [
+        "coverage.json: no distilled chunks; all-skipped work is not ready",
+        "claims.jsonl: at least one claim is required for readiness"
+      ],
+      "status": "pass"
+    }
+  ],
+  "evaluated_at": "2026-07-27T02:49:05.067034+00:00",
+  "schema_version": 1,
+  "status": "pass"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "case_id": "D-source-composition-order-a",
+  "probe_id": "global-october-rollout",
+  "answer": "No. S1 and independent S3 support October readiness only for North America and provide no Europe assessment or evidence; S4 blocks a global rollout until the EU audit closes. S2 is derived entirely from S1 and is excluded from independent corroboration.",
+  "global_rollout_supported": false,
+  "region_limited_source_ids": [
+    "S1",
+    "S3"
+  ],
+  "blocking_source_ids": [
+    "S4"
+  ],
+  "excluded_as_derived_source_ids": [
+    "S2"
+  ],
+  "confidence": "high"
+}

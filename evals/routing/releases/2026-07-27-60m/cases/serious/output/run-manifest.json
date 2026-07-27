@@ -1,0 +1,52 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Recover the budget cap, launch date, release blocker, minority dissent, and scope limitation with exact line locators.",
+  "output_mode": "executive-summary",
+  "required_facets": [
+    "budget_cap",
+    "launch_date",
+    "release_blocker",
+    "minority_dissent",
+    "scope_limitation"
+  ],
+  "required_risks": [
+    "boundary",
+    "representation",
+    "sparse-middle"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "Each of the five requested facts resolves to one exact timestamp and line locator, with no unsupported material claim.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": [
+      "S1-R1"
+    ],
+    "key_claim_ids": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "reload_paths": [
+      "run-manifest.json",
+      "sources.jsonl",
+      "chunk-notes.jsonl",
+      "evidence.jsonl",
+      "claims.jsonl",
+      "coverage.json",
+      "synthesis.md",
+      "handoff.md"
+    ],
+    "unresolved_gaps": [
+      "No audio or external source was supplied to verify the transcript statements."
+    ],
+    "safe_to_drop": [
+      "inputs/source.txt",
+      "chunks.jsonl"
+    ]
+  }
+}

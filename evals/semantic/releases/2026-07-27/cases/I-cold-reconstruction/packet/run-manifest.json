@@ -1,0 +1,35 @@
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Recover the release blocker and the scope caveat.",
+  "output_mode": "decisions",
+  "required_facets": [
+    "blocker",
+    "limitations"
+  ],
+  "required_risks": [
+    "representation"
+  ],
+  "acceptable_loss": "low",
+  "completion_oracle": "The blocker, caveat, source status, and reload paths are recoverable without raw source.",
+  "handoff": {
+    "source_revision_ids": [
+      "S9-R1"
+    ],
+    "key_claim_ids": [
+      "C9",
+      "C10"
+    ],
+    "reload_paths": [
+      "claims.jsonl",
+      "evidence.jsonl",
+      "sources.jsonl"
+    ],
+    "unresolved_gaps": [
+      "The accessibility audit completion date is unknown."
+    ],
+    "safe_to_drop": [
+      "raw transcript"
+    ]
+  }
+}

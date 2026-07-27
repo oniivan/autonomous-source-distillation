@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "route": "light",
+  "answers": {
+    "budget_cap": {
+      "answer": "$240,000",
+      "locator": "inputs/source.txt:47 (03:08)"
+    },
+    "launch_date": {
+      "answer": "November 18, 2026",
+      "locator": "inputs/source.txt:232 (15:28)"
+    },
+    "release_blocker": {
+      "answer": "Release remains blocked until the data-retention review closes.",
+      "locator": "inputs/source.txt:451 (30:04)"
+    },
+    "minority_dissent": {
+      "answer": "The reliability lead opposes launch unless the rollback test completes in under 8 minutes.",
+      "locator": "inputs/source.txt:683 (45:32)"
+    },
+    "scope_limitation": {
+      "answer": "The pilot sample excluded mobile users, limiting generalization.",
+      "locator": "inputs/source.txt:877 (58:28)"
+    }
+  },
+  "source_status": "source-only",
+  "unsupported_material_claims": [],
+  "recovery": {
+    "source_ref": "inputs/source.txt",
+    "reload_paths": [
+      "output/notes.md",
+      "output/coverage.json"
+    ],
+    "safe_to_drop": []
+  }
+}

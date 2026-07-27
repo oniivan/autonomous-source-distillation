@@ -1,0 +1,1 @@
+{"schema_version":3,"evidence_id":"E1","source_id":"S1","source_revision_id":"S1-R1","chunk_id":"S1-R1-C002","locator":"lines 2-3","statement":"Launch remains blocked until the backup restore drill passes.","polarity":"supports","duplicate_of":null,"caveat":"Canonical boundary-spanning observation; line 2 is overlap in this chunk and is counted once."}

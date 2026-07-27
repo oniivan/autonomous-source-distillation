@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 import subprocess
 import sys
@@ -73,6 +74,11 @@ class ChunkTextTests(unittest.TestCase):
         locator = chunk_text.find_locator("2026-07-18 12:34 build completed")
         self.assertEqual(locator, "2026-07-18 12:34")
 
+    def test_line_parsing_preserves_trailing_spaces_and_tabs(self):
+        lines = chunk_text.parse_lines("alpha  \nbeta\t\n")
+
+        self.assertEqual([line.text for line in lines], ["alpha  ", "beta\t"])
+
     def test_large_unit_does_not_create_overlap_only_chunk(self):
         text = "one two three\n" + " ".join(f"word{index}" for index in range(20))
         chunks = self.build(text, max_words=8, overlap_words=3)
@@ -105,6 +111,7 @@ class ChunkTextTests(unittest.TestCase):
                 capture_output=True,
                 text=True,
                 check=False,
+                cwd=source.parent,
             )
 
             self.assertEqual(result.returncode, 0, result.stderr)
@@ -113,9 +120,90 @@ class ChunkTextTests(unittest.TestCase):
                 for line in output.read_text(encoding="utf-8").splitlines()
             ]
             self.assertEqual(rows[0]["source_id"], "TX")
+            self.assertEqual(rows[0]["source_revision_id"], "TX-R1")
+            self.assertEqual(rows[0]["chunk_id"], "TX-R1-C001")
+            self.assertEqual(
+                rows[0]["schema_version"],
+                chunk_text.BUNDLE_SCHEMA_VERSION,
+            )
             self.assertEqual(rows[0]["content_line_start"], 1)
             self.assertIn("source_sha256", rows[0])
             self.assertIn("content_sha256", rows[0])
+
+    def test_cli_binds_raw_source_bytes_and_explicit_revision(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source = Path(temp) / "source.txt"
+            output = Path(temp) / "chunks.jsonl"
+            source_bytes = b"00:01 alpha\r\n00:02 beta\r\n"
+            source.write_bytes(source_bytes)
+
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(SCRIPT),
+                    str(source),
+                    "--source-id",
+                    "TX",
+                    "--source-revision-id",
+                    "TX-REV-2026-07-26",
+                    "--format",
+                    "jsonl",
+                    "--output",
+                    str(output),
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            row = json.loads(output.read_text(encoding="utf-8").splitlines()[0])
+            self.assertEqual(row["source_revision_id"], "TX-REV-2026-07-26")
+            self.assertEqual(row["source_line_count"], 2)
+            self.assertEqual(
+                row["source_sha256"],
+                hashlib.sha256(source_bytes).hexdigest(),
+            )
+
+    def test_cli_rejects_bad_public_inputs_without_traceback(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            valid = root / "valid.txt"
+            empty = root / "empty.txt"
+            invalid_utf8 = root / "invalid.txt"
+            valid.write_text("alpha\n", encoding="utf-8")
+            empty.write_text(" \n", encoding="utf-8")
+            invalid_utf8.write_bytes(b"\xff")
+            cases = [
+                ([str(root / "missing.txt")], "cannot read input"),
+                ([str(empty)], "must contain non-whitespace text"),
+                ([str(invalid_utf8)], "must be valid UTF-8"),
+                ([str(valid), "--source-id", ""], "portable identifier"),
+                (
+                    [str(valid), "--source-revision-id", "bad id"],
+                    "portable identifier",
+                ),
+                (
+                    [
+                        str(valid),
+                        "--output",
+                        str(root / "missing-parent" / "chunks.jsonl"),
+                    ],
+                    "cannot write output",
+                ),
+            ]
+
+            for arguments, expected in cases:
+                with self.subTest(arguments=arguments):
+                    result = subprocess.run(
+                        [sys.executable, str(SCRIPT), *arguments],
+                        capture_output=True,
+                        text=True,
+                        check=False,
+                    )
+                    self.assertEqual(result.returncode, 2)
+                    self.assertIn(expected, result.stderr)
+                    self.assertNotIn("Traceback", result.stderr)
 
 
 if __name__ == "__main__":

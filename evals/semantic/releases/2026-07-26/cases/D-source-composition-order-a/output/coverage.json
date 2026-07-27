@@ -1,0 +1,143 @@
+{
+  "schema_version": 3,
+  "sources": [
+    {
+      "source_id": "S1",
+      "source_revision_id": "S1-R1",
+      "planned_chunks": [
+        "S1-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S1-R1-C001"
+      ],
+      "skipped_chunks": []
+    },
+    {
+      "source_id": "S2",
+      "source_revision_id": "S2-R1",
+      "planned_chunks": [
+        "S2-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S2-R1-C001"
+      ],
+      "skipped_chunks": []
+    },
+    {
+      "source_id": "S3",
+      "source_revision_id": "S3-R1",
+      "planned_chunks": [
+        "S3-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S3-R1-C001"
+      ],
+      "skipped_chunks": []
+    },
+    {
+      "source_id": "S4",
+      "source_revision_id": "S4-R1",
+      "planned_chunks": [
+        "S4-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S4-R1-C001"
+      ],
+      "skipped_chunks": []
+    }
+  ],
+  "facets": [
+    {
+      "facet": "regional-readiness",
+      "status": "covered",
+      "evidence_ids": [
+        "E1",
+        "E5",
+        "E7"
+      ]
+    },
+    {
+      "facet": "Europe-coverage",
+      "status": "covered",
+      "evidence_ids": [
+        "E2",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "facet": "source-composition",
+      "status": "covered",
+      "evidence_ids": [
+        "E4",
+        "E6"
+      ]
+    },
+    {
+      "facet": "blocking-condition",
+      "status": "covered",
+      "evidence_ids": [
+        "E10"
+      ]
+    },
+    {
+      "facet": "global-decision",
+      "status": "covered",
+      "evidence_ids": [
+        "E3",
+        "E6",
+        "E9",
+        "E10"
+      ]
+    },
+    {
+      "facet": "minority-stance",
+      "status": "covered",
+      "evidence_ids": [
+        "E10"
+      ]
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "boundary",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S2-R1-C001",
+        "S3-R1-C001",
+        "S4-R1-C001"
+      ]
+    },
+    {
+      "risk": "representation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S2-R1-C001",
+        "S3-R1-C001",
+        "S4-R1-C001"
+      ]
+    },
+    {
+      "risk": "source-composition",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S2-R1-C001",
+        "S3-R1-C001",
+        "S4-R1-C001"
+      ]
+    },
+    {
+      "risk": "source-order",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S2-R1-C001",
+        "S3-R1-C001",
+        "S4-R1-C001"
+      ]
+    }
+  ]
+}

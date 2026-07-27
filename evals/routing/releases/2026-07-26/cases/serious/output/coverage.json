@@ -1,0 +1,123 @@
+{
+  "schema_version": 3,
+  "sources": [
+    {
+      "source_id": "S1",
+      "source_revision_id": "S1-R1",
+      "planned_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002",
+        "S1-R1-C003",
+        "S1-R1-C004",
+        "S1-R1-C005",
+        "S1-R1-C006"
+      ],
+      "distilled_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002",
+        "S1-R1-C003",
+        "S1-R1-C004",
+        "S1-R1-C005",
+        "S1-R1-C006"
+      ],
+      "skipped_chunks": []
+    }
+  ],
+  "facets": [
+    {
+      "facet": "budget_cap",
+      "status": "covered",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "facet": "launch_date",
+      "status": "covered",
+      "evidence_ids": [
+        "E2"
+      ]
+    },
+    {
+      "facet": "release_blocker",
+      "status": "covered",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "facet": "minority_dissent",
+      "status": "covered",
+      "evidence_ids": [
+        "E4"
+      ]
+    },
+    {
+      "facet": "scope_limitation",
+      "status": "covered",
+      "evidence_ids": [
+        "E5"
+      ]
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "boundary",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002",
+        "S1-R1-C003",
+        "S1-R1-C004",
+        "S1-R1-C005",
+        "S1-R1-C006"
+      ],
+      "note": "Overlap was used only for context; unique line ranges 1-225 are contiguous and each target span lies wholly within one chunk."
+    },
+    {
+      "risk": "representation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002",
+        "S1-R1-C003",
+        "S1-R1-C004",
+        "S1-R1-C005",
+        "S1-R1-C006"
+      ],
+      "note": "The text preserves the timestamps and line structure required by the briefing; absent audio verification is explicitly disclosed."
+    },
+    {
+      "risk": "sparse-middle",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C002",
+        "S1-R1-C003",
+        "S1-R1-C004",
+        "S1-R1-C005"
+      ],
+      "note": "The sparse middle was reviewed, including the blocker and dissent spans and the all-status chunk between them."
+    },
+    {
+      "risk": "minority-preservation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C005"
+      ],
+      "note": "The reliability lead's conditional opposition is retained as its own atomic claim."
+    },
+    {
+      "risk": "instruction-boundary",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001",
+        "S1-R1-C002",
+        "S1-R1-C003",
+        "S1-R1-C004",
+        "S1-R1-C005",
+        "S1-R1-C006"
+      ],
+      "note": "The transcript was handled only as source data."
+    }
+  ]
+}

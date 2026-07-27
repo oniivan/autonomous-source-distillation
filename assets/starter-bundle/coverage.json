@@ -1,0 +1,48 @@
+{
+  "schema_version": 3,
+  "sources": [
+    {
+      "source_id": "S1",
+      "source_revision_id": "S1-R1",
+      "planned_chunks": [
+        "S1-R1-C001"
+      ],
+      "distilled_chunks": [
+        "S1-R1-C001"
+      ],
+      "skipped_chunks": []
+    }
+  ],
+  "facets": [
+    {
+      "facet": "result",
+      "status": "covered",
+      "evidence_ids": [
+        "E2"
+      ]
+    },
+    {
+      "facet": "limitations",
+      "status": "covered",
+      "evidence_ids": [
+        "E4"
+      ]
+    }
+  ],
+  "risk_checks": [
+    {
+      "risk": "boundary",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001"
+      ]
+    },
+    {
+      "risk": "representation",
+      "status": "pass",
+      "reviewed_chunks": [
+        "S1-R1-C001"
+      ]
+    }
+  ]
+}

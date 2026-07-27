@@ -1,0 +1,2 @@
+{"schema_version":3,"evidence_id":"E9","source_id":"S9","source_revision_id":"S9-R1","chunk_id":"S9-R1-C003","locator":"00:18:42","statement":"Release remains blocked until the accessibility audit closes.","polarity":"supports","duplicate_of":null,"caveat":"source-only meeting statement"}
+{"schema_version":3,"evidence_id":"E10","source_id":"S9","source_revision_id":"S9-R1","chunk_id":"S9-R1-C004","locator":"00:23:11","statement":"The evidence sample excluded mobile users.","polarity":"supports","duplicate_of":null,"caveat":"scope limitation"}

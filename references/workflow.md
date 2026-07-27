@@ -1,6 +1,8 @@
 # Autonomous Source Distillation Workflow
 
 Use this reference for durable, reusable, high-coverage, or compaction-safe work.
+In commands below, resolve `ASD_SKILL_ROOT` to the directory containing the loaded
+`SKILL.md`; never assume the task working directory is the skill package.
 
 ## Contents
 
@@ -31,6 +33,34 @@ external_verification: none | targeted | research-owned
 completion_oracle: ""
 ```
 
+Choose `direct`, `light`, or `serious` with the route table in `SKILL.md`. Word counts
+are defaults, while risk, revision history, explicit audit, and resume needs are
+escalation overrides. For a serious bundle, encode the profile and handoff contract in
+`run-manifest.json`:
+
+```json
+{
+  "schema_version": 3,
+  "route": "serious",
+  "objective": "Recover decisions and unresolved risks.",
+  "output_mode": "decisions",
+  "required_facets": ["decision", "risk"],
+  "required_risks": ["boundary", "representation"],
+  "acceptable_loss": "low",
+  "completion_oracle": "Every decision and unresolved risk has exact evidence.",
+  "allow_empty_result": false,
+  "semantic_evaluation_required": false,
+  "semantic_evaluation_receipt": null,
+  "handoff": {
+    "source_revision_ids": ["S1-R1"],
+    "key_claim_ids": ["C1"],
+    "reload_paths": ["sources.jsonl", "claims.jsonl", "handoff.md"],
+    "unresolved_gaps": [],
+    "safe_to_drop": ["inputs/source.txt"]
+  }
+}
+```
+
 `required_facets` are content roles that must be checked even if they are not frequent:
 methods, results, limitations, dissent, decisions, owners, deadlines, failures,
 exceptions, numerical changes, or any task-specific role.
@@ -59,17 +89,32 @@ For a serious JSONL bundle, each `sources.jsonl` row uses:
 
 ```json
 {
+  "schema_version": 3,
   "source_id": "S1",
+  "source_revision_id": "S1-R1",
   "source_ref": "inputs/interview.txt",
-  "revision": "sha256:...",
+  "revision": "sha256:<64-lowercase-hex>",
+  "source_sha256": "<64-lowercase-hex>",
+  "source_family_id": "F1",
+  "derived_from_source_ids": [],
+  "accessed_at": "2026-07-26",
   "material_type": "transcript",
   "locator_scheme": "timestamp+line",
   "sensitivity": "private",
   "instruction_trust": "data-only",
   "representation_limits": ["speaker labels uncertain"],
-  "parent_context": "Interview about release workflow"
+  "coverage_mode": "contiguous-lines",
+  "line_count": 420
 }
 ```
+
+`source_id` is the logical source across time. `source_revision_id` identifies immutable
+bytes. Keep `source_family_id` stable across mirrors or editions that should not count as
+independent corroboration; declare derivation from another logical source in
+`derived_from_source_ids`. For local UTF-8 sources, use a bundle-relative path: the
+auditor binds the file bytes, digest, revision string, and line count. Missing local
+sources block readiness, escaping or absolute paths fail structure, and `http`/`https`
+sources remain usable with an explicit unverified-byte warning.
 
 ### Representation Gate
 
@@ -112,8 +157,9 @@ distant context.
 Each chunk plan should record:
 
 ```yaml
-chunk_id: S1-C003
+chunk_id: S1-R1-C003
 source_id: S1
+source_revision_id: S1-R1
 ordinal: 3
 native_locator: "00:17:20-00:23:10"
 parent_context: "Deployment rollback discussion"
@@ -126,8 +172,18 @@ unique_content: "lines 227-301"
 Use overlap to preserve local context, not to manufacture extra evidence. Give every
 evidence span one canonical locator; secondary sightings use `duplicate_of`.
 
-Use `scripts/chunk_text.py` only as a mechanical fallback. Its JSONL output distinguishes
-loaded overlap from newly covered content so coverage can be counted once.
+Use `scripts/chunk_text.py` only as a mechanical fallback. Its schema-v3 JSONL output
+binds chunks to immutable source bytes and distinguishes loaded overlap from newly
+covered content so coverage can be counted once:
+
+```bash
+python3 "$ASD_SKILL_ROOT/scripts/chunk_text.py" inputs/interview.txt \
+  --source-id S1 \
+  --source-revision-id S1-R1 \
+  --boundary-mode paragraph \
+  --format jsonl \
+  --output chunks.jsonl
+```
 
 ### Re-chunk triggers
 
@@ -145,7 +201,7 @@ Re-plan a region when:
 For Markdown:
 
 ```markdown
-## S1-C003 | 00:17:20-00:23:10
+## S1-R1-C003 | 00:17:20-00:23:10
 
 - source-faithful gist:
 - atomic propositions:
@@ -163,7 +219,8 @@ For `chunk-notes.jsonl`:
 
 ```json
 {
-  "chunk_id": "S1-C003",
+  "schema_version": 3,
+  "chunk_id": "S1-R1-C003",
   "status": "distilled",
   "gist": "...",
   "propositions": ["..."],
@@ -197,12 +254,14 @@ Example `coverage.json`:
 
 ```json
 {
+  "schema_version": 3,
   "sources": [
     {
       "source_id": "S1",
-      "planned_chunks": ["S1-C001", "S1-C002", "S1-C003"],
-      "distilled_chunks": ["S1-C001", "S1-C002"],
-      "skipped_chunks": [{"chunk_id": "S1-C003", "reason": "duplicate appendix"}]
+      "source_revision_id": "S1-R1",
+      "planned_chunks": ["S1-R1-C001", "S1-R1-C002", "S1-R1-C003"],
+      "distilled_chunks": ["S1-R1-C001", "S1-R1-C002"],
+      "skipped_chunks": [{"chunk_id": "S1-R1-C003", "reason": "duplicate appendix"}]
     }
   ],
   "facets": [
@@ -215,7 +274,7 @@ Example `coverage.json`:
     }
   ],
   "risk_checks": [
-    {"risk": "boundary", "status": "pass", "reviewed_chunks": ["S1-C002"]}
+    {"risk": "boundary", "status": "pass", "reviewed_chunks": ["S1-R1-C002"]}
   ]
 }
 ```
@@ -230,9 +289,11 @@ Evidence rows:
 
 ```json
 {
+  "schema_version": 3,
   "evidence_id": "E7",
   "source_id": "S1",
-  "chunk_id": "S1-C003",
+  "source_revision_id": "S1-R1",
+  "chunk_id": "S1-R1-C003",
   "locator": "00:19:44-00:20:18",
   "statement": "Short paraphrase or compliant quote",
   "polarity": "supports",
@@ -245,29 +306,40 @@ Claims rows:
 
 ```json
 {
+  "schema_version": 3,
   "claim_id": "C4",
   "claim": "...",
-  "type": "factual",
-  "status": "source-only",
+  "claim_kind": "factual",
+  "verification_status": "source-only",
+  "lifecycle_status": "active",
   "evidence_ids": ["E7", "E11"],
+  "supporting_source_ids": ["S1", "S2"],
+  "opposing_source_ids": [],
+  "qualifying_source_ids": [],
   "independent_source_ids": ["S1", "S2"],
   "verification_refs": [],
-  "uncertainty": "..."
+  "premise_claim_ids": [],
+  "supersedes_claim_ids": [],
+  "superseded_by_claim_ids": []
 }
 ```
 
-Allowed claim statuses:
+Keep three claim dimensions separate:
 
-- `source-only`
-- `externally-verified`
-- `contradicted`
-- `uncertain`
-- `inference`
-- `superseded`
+- `claim_kind`: `factual` or `inference`;
+- `verification_status`: `source-only`, `externally-verified`, `uncertain`, or
+  `disputed`;
+- `lifecycle_status`: `active` or `superseded`.
 
 Do not use `externally-verified` without a verification reference owned by the research
 or verification workflow. Distillation may preserve or lower evidence strength, never
 raise it.
+
+Evidence polarity is `supports`, `opposes`, `qualifies`, `context`, or `uncertainty`.
+The three source-ID stance lists on each claim must exactly reflect its canonical
+evidence. If one source span plays different logical roles for different claims, record
+separate atomic evidence observations. `duplicate_of` is reserved for the same
+observation repeated by overlap.
 
 For multi-source work, add a stance matrix before synthesis:
 
@@ -316,9 +388,10 @@ Use for revised files and append-only streams:
 
 1. fingerprint or version the source;
 2. identify added, changed, deleted, and unchanged regions;
-3. chunk only affected regions, retaining stable IDs when content identity is stable;
+3. register the new immutable `source_revision_id` and chunk only affected regions;
 4. classify affected claims as added, corrected, contradicted, superseded, or unchanged;
-5. preserve the prior evidence row and link the replacement with `supersedes`;
+5. preserve the prior evidence row; make old/new claim links reciprocal with
+   `superseded_by_claim_ids` and `supersedes_claim_ids`;
 6. rebuild only synthesis sections dependent on changed claims;
 7. emit a delta receipt with old/new revisions and affected IDs.
 
@@ -328,6 +401,8 @@ Never edit an old claim to make history disappear.
 
 ```text
 <work-dir>/
+  inputs/
+  run-manifest.json
   run-manifest.md
   sources.jsonl
   chunks.jsonl
@@ -342,11 +417,32 @@ Never edit an old claim to make history disappear.
 Run:
 
 ```bash
-python scripts/audit_bundle.py <work-dir>
+python3 "$ASD_SKILL_ROOT/scripts/audit_bundle.py" <work-dir> --require-ready
 ```
 
-The structural audit does not prove semantic completeness. Use
-`references/evaluation.md` for fresh-agent probes.
+Schema v3 is selected by the presence of `run-manifest.json`. Legacy schema-v2 bundles
+without it remain structurally auditable with a compatibility warning, but their
+readiness is `not-evaluated`.
+
+`run-manifest.json` is the machine authority. `run-manifest.md` is a human-readable
+orientation layer and must not restate conflicting route, objective, source revision,
+claim, or handoff state.
+
+Exit `0` means the requested gate passed. The default CLI requires only structural
+validity; `--require-ready` also requires readiness. The JSON receipt keeps
+`structure_status`, `readiness_status`, structural `errors`, readiness-only
+`readiness_errors`, and compatibility `warnings` separate.
+
+Structural/readiness audit does not prove semantic completeness or factual truth. When
+semantic evaluation is required, run the fresh-agent probes in `references/evaluation.md`
+and reference their separate receipt from `run-manifest.json`.
+
+`semantic_evaluation_receipt` is self-attested metadata only. The deterministic auditor
+checks that a declared file exists and is parseable, but cannot prove that a fresh agent
+ran or that an oracle was protected. When `semantic_evaluation_required` is true,
+readiness therefore remains externally pending and `--require-ready` fails until a
+trusted controller or human adjudicates the separate semantic receipt. Never relabel a
+local JSON file as trusted semantic proof.
 
 ## 10. Context Budget And Handoff
 

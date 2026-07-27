@@ -1,0 +1,30 @@
+{
+  "cases": [
+    {
+      "case_dir": "<external-route-run-root>/cases/direct",
+      "output_dir": "<external-route-run-root>/cases/direct/output",
+      "route": "direct",
+      "task": "<external-route-run-root>/cases/direct/task.md"
+    },
+    {
+      "case_dir": "<external-route-run-root>/cases/light",
+      "output_dir": "<external-route-run-root>/cases/light/output",
+      "route": "light",
+      "task": "<external-route-run-root>/cases/light/task.md"
+    },
+    {
+      "case_dir": "<external-route-run-root>/cases/serious",
+      "output_dir": "<external-route-run-root>/cases/serious/output",
+      "route": "serious",
+      "task": "<external-route-run-root>/cases/serious/task.md"
+    }
+  ],
+  "oracle_copied_to_run": false,
+  "prepared_at": "2026-07-27T02:59:57.434097+00:00",
+  "schema_version": 1,
+  "skill_root": "$CODEX_HOME/skills/autonomous-source-distillation",
+  "skill_tree_sha256": "09f92a062aa0ee117b274d0280707ee4200a5e7355e1a5ea7ebfed663f41fe07",
+  "source_bytes": 12560,
+  "source_sha256": "e7f5027084e59297f1d6e3779fe7d866b1ce3a9bc2f4111f5d6724640f68f302",
+  "source_words": 2251
+}
